@@ -3,13 +3,26 @@ page-home {
     .companyInfo{
         font-size: 15px;
         text-align: right;
-        padding: auto;
-        margin: auto;
         background-color: color($colors,primary);
         color: color($colors,light);
     }
 
-    .newJob{
-        background-color: #e4c9c9;
+    ion-card.card-md {
+        margin-left: 0px;
+    }
+
+    ion-list{
+        border-top: 1px solid color($colors,gray1);
+
+    }
+
+    ion-list-header.list-header{
+        border-bottom: 1px solid color($colors,gray1);
+        background-color:#c7c7c7;
+        color:#ffffff;
+    }
+
+    .item-block{
+        border-bottom: 1px solid color($colors,gray1);
     }
 }
