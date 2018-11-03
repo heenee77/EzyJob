@@ -1,7 +1,8 @@
 import { Component } from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
-import { DashboardPage } from "../dashboard/dashboard";
+// import { DashboardPage } from "../dashboard/dashboard";
+import { HomePage } from "../home/home";
 
 /**
  * Generated class for the LoginPage page.
@@ -34,7 +35,7 @@ export class LoginPage {
 
     //TODO: Authenticate if login data is valid
 
-    this.navCtrl.setRoot(DashboardPage);
+    this.navCtrl.setRoot(HomePage);
   }
 
   ionViewDidLoad() {

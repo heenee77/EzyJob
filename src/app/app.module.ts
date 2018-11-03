@@ -3,7 +3,7 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
-// import { HomePage } from '../pages/home/home';
+import { HomePage } from '../pages/home/home';
 // import { ListPage } from '../pages/list/list';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -15,7 +15,8 @@ import { DashboardPage } from '../pages/dashboard/dashboard';
   declarations: [
     MyApp,
     LoginPage,
-    DashboardPage
+    DashboardPage,
+    HomePage
   ],
   imports: [
     BrowserModule,
@@ -25,7 +26,8 @@ import { DashboardPage } from '../pages/dashboard/dashboard';
   entryComponents: [
     MyApp,
     LoginPage,
-    DashboardPage
+    DashboardPage,
+    HomePage
   ],
   providers: [
     StatusBar,
