@@ -1,18 +1,42 @@
 <ion-header>
+
   <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Home</ion-title>
+    <ion-toolbar>
+      <ion-grid no-padding>
+          <ion-row>
+            <ion-col col-9>
+                <ion-toolbar>
+                    <ion-title>EzyJob</ion-title>
+                </ion-toolbar>
+            </ion-col>
+            <ion-col col-2 align-items-stretch align-self-center>
+                    <div class="companyInfo">ABC Company</div>
+            </ion-col>
+            <ion-col col-1>
+                    <button ion-button clear color="light">UserName<ion-icon name="arrow-dropdown"></ion-icon></button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+    </ion-toolbar>
+    
+    <ion-toolbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Dashboard</ion-title>
+    </ion-toolbar>
   </ion-navbar>
+
 </ion-header>
 
 <ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+  <ion-grid>
+    <ion-row></ion-row>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
-
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+    <ion-row>
+      <ion-col>
+        <button ion-button color="dark" outline col-2 id="newJob">New Job</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
