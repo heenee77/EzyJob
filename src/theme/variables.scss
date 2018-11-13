@@ -85,3 +85,12 @@ $toolbar-wp-padding: 0px;
 
 @import "roboto";
 @import "noto-sans";
+
+.navButton{
+  background-color: color($colors,secondary);
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 1.5em;
+  color: color($colors,light);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px 5px 0px 0px;
+}

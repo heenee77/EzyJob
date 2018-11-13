@@ -20,7 +20,7 @@ export class LoginPage {
   private loginData: FormGroup;
 
   constructor(
-    public navCtrl: NavController,
+    private navCtrl: NavController,
     public navParams: NavParams,
     private formBuilder: FormBuilder
   ) {
