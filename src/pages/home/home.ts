@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, PopoverController } from 'ionic-angular';
 import { JobDetailsPage } from '../job-details/job-details';
 import { ClientPage } from '../client/client';
 import { JobPage } from '../job/job';
@@ -19,7 +19,7 @@ export class HomePage {
   tab4: any;
   tab5: any;
 
-  constructor(private navCtrl: NavController) {
+  constructor(public navCtrl: NavController, public popoverCtrl: PopoverController) {
     this.jobs = [
       {jobNum: "J0001", jobDesc:"Initial Meeting"},
       {jobNum: "J0002", jobDesc:"Planning"},

@@ -87,10 +87,13 @@ $toolbar-wp-padding: 0px;
 @import "noto-sans";
 
 .navButton{
-  background-color: color($colors,secondary);
+  background-color: color($colors,primary);
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size: 1.5em;
   color: color($colors,light);
+}
+
+.navButton:hover{
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 5px 5px 0px 0px;
 }
