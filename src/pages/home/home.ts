@@ -5,6 +5,7 @@ import { ClientPage } from '../client/client';
 import { JobPage } from '../job/job';
 import { BusinessPage } from '../business/business';
 import { ReportPage } from '../report/report';
+import { UserDropdownPage } from '../user-dropdown/user-dropdown';
 
 @IonicPage()
 @Component({
@@ -30,5 +31,12 @@ export class HomePage {
 
   pageNav(pageNum:number){
     this.navCtrl.push(this.pageList[pageNum]);
+  }
+
+  presentPopover(myEvent) {
+    let popover = this.popoverCtrl.create(UserDropdownPage);
+    popover.present({
+      ev: myEvent
+    });
   }
 }

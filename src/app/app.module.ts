@@ -14,6 +14,7 @@ import { JobDetailsPage } from '../pages/job-details/job-details';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { LoginPage } from '../pages/login/login';
+import { UserDropdownPage } from '../pages/user-dropdown/user-dropdown';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { LoginPage } from '../pages/login/login';
     JobPage,
     BusinessPage,
     ReportPage,
-    JobDetailsPage
+    JobDetailsPage,
+    UserDropdownPage
   ],
   imports: [
     BrowserModule,
@@ -42,7 +44,8 @@ import { LoginPage } from '../pages/login/login';
     JobPage,
     BusinessPage,
     ReportPage,
-    JobDetailsPage
+    JobDetailsPage,
+    UserDropdownPage
   ],
   providers: [
     StatusBar,
