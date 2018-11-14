@@ -31,20 +31,20 @@
             </button>
           </ion-col>-->
           
-            <ion-col col-sm-2>
+            <ion-col col-sm-2 class="selected-whatever">
               <button class="navButton">Dashboard</button>
             </ion-col>
             <ion-col col-sm-2>
-              <button (click)="pageNav(ClientPage)" class="navButton">Clients</button>
+              <button (click)="pageNav(1)" class="navButton">Clients</button>
             </ion-col>
             <ion-col col-sm-2>
-              <button (click)="pageNav()" class="navButton">Jobs</button>
+              <button (click)="pageNav(2)" class="navButton">Jobs</button>
             </ion-col>
             <ion-col col-sm-2>
-              <button class="navButton">Business</button>
+              <button (click)="pageNav(3)" class="navButton">Business</button>
             </ion-col>
             <ion-col col-sm-2>
-              <button class="navButton">Reports</button>
+              <button (click)="pageNav(4)" class="navButton">Reports</button>
             </ion-col>
           
         </ion-row>

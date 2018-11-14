@@ -9,11 +9,11 @@ import { BusinessPage } from '../pages/business/business';
 import { ReportPage } from '../pages/report/report';
 import { ClientPage } from '../pages/client/client';
 import { JobPage } from '../pages/job/job';
+import { JobDetailsPage } from '../pages/job-details/job-details';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { LoginPage } from '../pages/login/login';
-import { DashboardPage } from '../pages/dashboard/dashboard';
 
 
 @NgModule({
@@ -21,12 +21,12 @@ import { DashboardPage } from '../pages/dashboard/dashboard';
     MyApp,
     LoginPage,
     ListPage,
-    DashboardPage,
     HomePage,
     ClientPage,
     JobPage,
     BusinessPage,
-    ReportPage
+    ReportPage,
+    JobDetailsPage
   ],
   imports: [
     BrowserModule,
@@ -37,12 +37,12 @@ import { DashboardPage } from '../pages/dashboard/dashboard';
     MyApp,
     LoginPage,
     ListPage,
-    DashboardPage,
     HomePage,
     ClientPage,
     JobPage,
     BusinessPage,
-    ReportPage
+    ReportPage,
+    JobDetailsPage
   ],
   providers: [
     StatusBar,
