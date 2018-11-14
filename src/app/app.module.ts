@@ -12,6 +12,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { HttpClientModule } from "@angular/common/http";
 import { DevPage } from '../pages/dev/dev';
 import { CommentsProvider } from '../providers/comments/comments';
+import { RequestProvider } from '../providers/request/request';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { CommentsProvider } from '../providers/comments/comments';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    CommentsProvider
+    CommentsProvider,
+    RequestProvider
   ]
 })
 export class AppModule {}
