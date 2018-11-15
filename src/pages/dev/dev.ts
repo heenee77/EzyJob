@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
-import { ExampleComment } from "../../models/example";
-import { CommentsProvider } from "../../providers/comments/comments";
+import { RequestProvider } from "../../providers/request/request";
+import { User } from "../../models/user";
 
 /**
  * Generated class for the DevPage page.
@@ -16,16 +16,18 @@ import { CommentsProvider } from "../../providers/comments/comments";
   templateUrl: "dev.html"
 })
 export class DevPage {
-  commentList: ExampleComment[];
+
+  userList: User[] = [];
 
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    public commentsProvider: CommentsProvider
+    public requestProvider: RequestProvider
   ) {
-    this.commentsProvider.getAllComments().then(responseData => {
-      this.commentList = responseData;
-    });
+    requestProvider.getDataList<User>("mcwei", 1).then(result => {
+      this.userList = result;
+      console.log("result: ", result);
+    })
   }
 
   ionViewDidLoad() {
