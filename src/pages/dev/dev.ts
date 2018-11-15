@@ -24,7 +24,7 @@ export class DevPage {
     public navParams: NavParams,
     public requestProvider: RequestProvider
   ) {
-    requestProvider.getDataList<User>("mcwei", 1).then(result => {
+    requestProvider.getDataList<User>("USER", "mcwei", 1).then(result => {
       this.userList = result;
       console.log("result: ", result);
     })
