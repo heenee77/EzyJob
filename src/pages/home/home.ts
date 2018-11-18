@@ -15,7 +15,7 @@ import { UserDropdownPage } from '../user-dropdown/user-dropdown';
 export class HomePage {
 
   jobs: Array<{jobNum: string, jobDesc: string}>;
-  pageList = [HomePage, ClientPage, JobPage, BusinessPage, ReportPage];
+  public pageList = [HomePage, ClientPage, JobPage, BusinessPage, ReportPage];
 
   constructor(private navCtrl: NavController, public popoverCtrl: PopoverController) {
     this.jobs = [
@@ -23,6 +23,7 @@ export class HomePage {
       {jobNum: "J0002", jobDesc:"Planning"},
       {jobNum: "J0003", jobDesc:"Development"}
     ]
+
   }
   
   itemSelected(jobSelection){
@@ -30,7 +31,7 @@ export class HomePage {
   }
 
   pageNav(pageNum:number){
-    this.navCtrl.push(this.pageList[pageNum]);
+    this.navCtrl.setRoot(this.pageList[pageNum]);
   }
 
   presentPopover(myEvent) {

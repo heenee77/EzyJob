@@ -101,3 +101,10 @@ $toolbar-wp-padding: 0px;
 
 $toolbar-background: color($colors, primary);
 
+.companyInfo{
+  font-size: 15px;
+  text-align: right;
+  background-color: color($colors,primary);
+  color: color($colors,light);
+}
+
