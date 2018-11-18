@@ -3,9 +3,14 @@ import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-// import { HomePage } from '../pages/home/home';
-// import { ListPage } from '../pages/list/list';
+import { HomePage } from '../pages/home/home';
+import { ListPage } from '../pages/list/list';
 import { LoginPage } from '../pages/login/login';
+import { JobDetailsPage } from '../pages/job-details/job-details';
+import { ClientPage } from '../pages/client/client';
+import { JobPage } from '../pages/job/job';
+import { BusinessPage } from '../pages/business/business';
+import { ReportPage } from '../pages/report/report';
 
 @Component({
   templateUrl: 'app.html'
@@ -22,8 +27,13 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-
-      // { title: 'List', component: ListPage }
+      { title: 'Home', component: HomePage }, 
+      { title: 'List', component: ListPage },
+      { title: 'JobDetails', component: JobDetailsPage },
+      { title: 'Client', component: ClientPage },
+      { title: 'Job', component: JobPage },
+      { title: 'Business', component: BusinessPage },
+      { title: 'Report', component: ReportPage },
     ];
 
   }

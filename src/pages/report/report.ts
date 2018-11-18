@@ -1,35 +1,33 @@
 import { Component } from '@angular/core';
 import { NavController, IonicPage, PopoverController } from 'ionic-angular';
-import { JobDetailsPage } from '../job-details/job-details';
 import { ClientPage } from '../client/client';
 import { JobPage } from '../job/job';
 import { BusinessPage } from '../business/business';
-import { ReportPage } from '../report/report';
 import { UserDropdownPage } from '../user-dropdown/user-dropdown';
+import { HomePage } from '../home/home';
+/**
+ * Generated class for the ReportPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
 
 @IonicPage()
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html'
+  selector: 'page-report',
+  templateUrl: 'report.html',
 })
-export class HomePage {
+export class ReportPage {
 
-  jobs: Array<{jobNum: string, jobDesc: string}>;
   public pageList = [HomePage, ClientPage, JobPage, BusinessPage, ReportPage];
 
-  constructor(private navCtrl: NavController, public popoverCtrl: PopoverController) {
-    this.jobs = [
-      {jobNum: "J0001", jobDesc:"Initial Meeting"},
-      {jobNum: "J0002", jobDesc:"Planning"},
-      {jobNum: "J0003", jobDesc:"Development"}
-    ]
+  constructor(public navCtrl: NavController, public popoverCtrl: PopoverController) {
+  }
 
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad ReportPage');
   }
   
-  itemSelected(jobSelection){
-    this.navCtrl.push(JobDetailsPage, jobSelection);
-  }
-
   pageNav(pageNum:number){
     this.navCtrl.setRoot(this.pageList[pageNum]);
   }
@@ -40,4 +38,5 @@ export class HomePage {
       ev: myEvent
     });
   }
+
 }

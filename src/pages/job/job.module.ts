@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
-import { DashboardPage } from './dashboard';
+import { JobPage } from './job';
 
 @NgModule({
   declarations: [
-    DashboardPage,
+    JobPage,
   ],
   imports: [
-    IonicPageModule.forChild(DashboardPage),
+    IonicPageModule.forChild(JobPage),
   ],
 })
-export class DashboardPageModule {}
+export class JobPageModule {}

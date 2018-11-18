@@ -1,3 +1,9 @@
+<!--
+  Generated template for the ClientPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
 <ion-header>
   <!--Header Bar-->
   <ion-navbar>
@@ -32,10 +38,10 @@
           </ion-col>-->
           
             <ion-col col-sm-2>
-              <button class="navButton">Dashboard</button>
+              <button (click)="pageNav(0)" class="navButton">Dashboard</button>
             </ion-col>
             <ion-col col-sm-2>
-              <button (click)="pageNav(1)" class="navButton">Clients</button>
+              <button class="navButton">Clients</button>
             </ion-col>
             <ion-col col-sm-2>
               <button (click)="pageNav(2)" class="navButton">Jobs</button>
@@ -55,54 +61,7 @@
 
 </ion-header>
 
+
 <ion-content padding>
-  <ion-grid style="width:90%">
-    <ion-row></ion-row>
 
-    <ion-row>
-      <ion-col col-3>
-          <ion-row col-12>
-              <ion-col>
-                  <button ion-button col-12>New Job</button>
-              </ion-col>
-          </ion-row>
-    
-          <ion-row col-12>
-            <ion-col>
-                <ion-card col-12>
-                    <ion-list>
-                      <ion-list-header>
-                              My Jobs - Planned
-                      </ion-list-header>
-    
-                      <button ion-item *ngFor="let j of jobs" (click)="itemSelected(j)">
-                                {{ j.jobNum }} - {{j.jobDesc}}
-                      </button>
-          
-                    </ion-list>
-                </ion-card>
-            </ion-col>
-          </ion-row>
-      </ion-col>
-
-      <ion-col col-9>
-          <ion-card>
-              <ion-card-header>
-                Important Dates
-              </ion-card-header>
-              <ion-card-content>
-                *Calendar
-              </ion-card-content>
-
-              <ion-card-header>
-                  Today's Jobs
-              </ion-card-header>
-              <ion-card-content>
-                  *Table
-              </ion-card-content>
-          </ion-card>
-      </ion-col>
-
-    </ion-row>
-  </ion-grid>
 </ion-content>

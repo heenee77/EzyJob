@@ -1,7 +1,6 @@
 import { Component } from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
-// import { DashboardPage } from "../dashboard/dashboard";
 import { HomePage } from "../home/home";
 
 /**
@@ -20,7 +19,7 @@ export class LoginPage {
   private loginData: FormGroup;
 
   constructor(
-    public navCtrl: NavController,
+    private navCtrl: NavController,
     public navParams: NavParams,
     private formBuilder: FormBuilder
   ) {
