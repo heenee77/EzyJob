@@ -1,0 +1,101 @@
+<!--
+  Generated template for the JobManagerPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar> <ion-title>jobManager</ion-title> </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="job-summary-table">
+    <table class="striped">
+      <tr>
+        <td>
+          <h4>Total</h4>
+          <span>{{ jobSummary.total }}</span>
+        </td>
+        <td>
+          <h4>Starting Today</h4>
+          <span>{{ jobSummary.startingToday }}</span>
+        </td>
+        <td>
+          <h4>Due This Week</h4>
+          <span>{{ jobSummary.dueThisWeek }}</span>
+        </td>
+        <td>
+          <h4>Due Next Week</h4>
+          <span>{{ jobSummary.dueNextWeek }}</span>
+        </td>
+        <td>
+          <h4>Overdue</h4>
+          <span>{{ jobSummary.overdue }}</span>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="planned-job-list">
+    <table>
+      <thead>
+        <tr>
+          <td>My Jobs - Planned</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let job of plannedJobList">
+          <td>
+            <a>{{ job.jobNumber }}</a> - {{ job.name }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="in-progress-job-list"></div>
+  <table>
+    <thead>
+      <tr>
+        <td>My Jobs - Planned</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let job of inProgressJobList">
+        <td>
+          <a>{{ job.jobNumber }}</a> - {{ job.name }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="job-list-table">
+    <table>
+      <thead>
+        <tr>
+          <td>!</td>
+          <td>Job No.</td>
+          <td>Client</td>
+          <td>Name</td>
+          <td>State</td>
+          <td>Start</td>
+          <td>Due</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let job of jobList">
+          <td>
+            <span *ngIf="job.important"><b>!</b></span>
+          </td>
+          <td>
+            <a>{{ job.jobNumber }}</a>
+          </td>
+          <td>{{ job.client }}</td>
+          <td>{{ job.name }}</td>
+          <td>{{ job.state }}</td>
+          <td>{{ job.startDate }}</td>
+          <td>{{ job.dueDate }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</ion-content>
