@@ -17,6 +17,10 @@ import { LoginPage } from '../pages/login/login';
 import { UserDropdownPage } from '../pages/user-dropdown/user-dropdown';
 
 
+import { HttpClientModule } from "@angular/common/http";
+import { DevPage } from '../pages/dev/dev';
+import { RequestProvider } from '../providers/request/request';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -28,10 +32,12 @@ import { UserDropdownPage } from '../pages/user-dropdown/user-dropdown';
     BusinessPage,
     ReportPage,
     JobDetailsPage,
-    UserDropdownPage
+    UserDropdownPage,
+    DevPage
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
@@ -45,12 +51,14 @@ import { UserDropdownPage } from '../pages/user-dropdown/user-dropdown';
     BusinessPage,
     ReportPage,
     JobDetailsPage,
-    UserDropdownPage
+    UserDropdownPage,
+    DevPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    RequestProvider
   ]
 })
 export class AppModule {}

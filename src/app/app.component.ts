@@ -5,12 +5,15 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+
 import { LoginPage } from '../pages/login/login';
 import { JobDetailsPage } from '../pages/job-details/job-details';
 import { ClientPage } from '../pages/client/client';
 import { JobPage } from '../pages/job/job';
 import { BusinessPage } from '../pages/business/business';
 import { ReportPage } from '../pages/report/report';
+import { DevPage } from '../pages/dev/dev';
+
 
 @Component({
   templateUrl: 'app.html'
@@ -34,6 +37,7 @@ export class MyApp {
       { title: 'Job', component: JobPage },
       { title: 'Business', component: BusinessPage },
       { title: 'Report', component: ReportPage },
+      { title: 'Dev', component: DevPage }
     ];
 
   }
