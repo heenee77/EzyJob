@@ -75,7 +75,7 @@ export class JobManagerPage {
         jobNumber: "J0000001",
         client: "Eagle",
         name: "Develop EzJob",
-        state: "Planned",
+        state: "planned",
         startDate: new Date(Date.now() - 100000000),
         dueDate: new Date(Date.now())
       },
@@ -84,7 +84,7 @@ export class JobManagerPage {
         jobNumber: "J0000002",
         client: "Hee Nee",
         name: "Style EzJob",
-        state: "Planned",
+        state: "planned",
         startDate: new Date(Date.now() - 200000000),
         dueDate: new Date(Date.now())
       },
@@ -93,7 +93,7 @@ export class JobManagerPage {
         jobNumber: "J0000003",
         client: "Eagle",
         name: "Looking Great",
-        state: "Planned",
+        state: "planned",
         startDate: new Date(Date.now() - 300000000),
         dueDate: new Date(Date.now())
       }

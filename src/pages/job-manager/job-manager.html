@@ -69,7 +69,7 @@
     </tbody>
   </table>
   <div class="job-list-table">
-    <table>
+    <table style="width: 100%;">
       <thead>
         <tr>
           <td>!</td>
@@ -91,9 +91,18 @@
           </td>
           <td>{{ job.client }}</td>
           <td>{{ job.name }}</td>
-          <td>{{ job.state }}</td>
-          <td>{{ job.startDate }}</td>
-          <td>{{ job.dueDate }}</td>
+          <td>
+            <ion-item>
+              <!-- <ion-label>Job State</ion-label> -->
+              <ion-select [(ngModel)]="job.state">
+                <ion-option [value]="planned">Planned</ion-option>
+                <ion-option [value]="inProgress">In Progress</ion-option>
+                <ion-option [value]="resolved">Resolved</ion-option>
+              </ion-select>
+            </ion-item>
+          </td>
+          <td>{{ job.startDate.toLocaleDateString() }}</td>
+          <td>{{ job.dueDate.toLocaleDateString() }}</td>
         </tr>
       </tbody>
     </table>
