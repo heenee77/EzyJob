@@ -13,7 +13,9 @@ import { IonicPage, NavController, NavParams } from "ionic-angular";
   selector: "page-job-manager",
   templateUrl: "job-manager.html"
 })
+
 export class JobManagerPage {
+  
   jobSummary: {
     total: number;
     startingToday: number;
@@ -22,15 +24,7 @@ export class JobManagerPage {
     overdue: number;
   };
 
-  jobList: {
-    important: boolean;
-    jobNumber: string;
-    client: string;
-    name: string;
-    state: string;
-    startDate: Date;
-    dueDate: Date;
-  }[];
+  jobList: Job[];
 
   plannedJobList: {
     jobNumber: string;
@@ -41,6 +35,43 @@ export class JobManagerPage {
     jobNumber: string;
     name: string;
   }[];
+
+  sortJobList(
+    inputList: Job[],
+    sortingProperty: string,
+    ascending: boolean
+  ): Job[] {
+    let propertyList = [
+      "important",
+      "jobNumber",
+      "client",
+      "name",
+      "state",
+      "startDate",
+      "dueDate"
+    ];
+
+    let stringProperty = ["jobNumber", "client", "name", "state"];
+
+    if (propertyList.indexOf(sortingProperty) <= -1) return inputList;
+
+    let sortedJobList = inputList.sort((itemOne, itemTwo) => {
+      let propertyItemOne = itemOne[sortingProperty];
+      let propertyItemTwo = itemTwo[sortingProperty];
+
+      if (stringProperty.indexOf(sortingProperty) <= -1) {
+        return propertyItemTwo - propertyItemOne;
+      } else {
+        return (<string>propertyItemOne).localeCompare(<string>propertyItemTwo);
+      }
+    });
+
+    if (!ascending) {
+      sortedJobList = sortedJobList.reverse();
+    }
+
+    return sortedJobList;
+  }
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.jobSummary = {
@@ -67,7 +98,7 @@ export class JobManagerPage {
         jobNumber: "J0000002",
         name: "Style EzJob"
       }
-    ]
+    ];
 
     this.jobList = [
       {
@@ -84,7 +115,7 @@ export class JobManagerPage {
         jobNumber: "J0000002",
         client: "Hee Nee",
         name: "Style EzJob",
-        state: "planned",
+        state: "inProgress",
         startDate: new Date(Date.now() - 200000000),
         dueDate: new Date(Date.now())
       },
@@ -93,14 +124,27 @@ export class JobManagerPage {
         jobNumber: "J0000003",
         client: "Eagle",
         name: "Looking Great",
-        state: "planned",
+        state: "resolved",
         startDate: new Date(Date.now() - 300000000),
         dueDate: new Date(Date.now())
       }
     ];
+
+    this.sortJobList(this.jobList, "jobNumber", true);
   }
 
   ionViewDidLoad() {
     console.log("ionViewDidLoad JobManagerPage");
   }
+}
+
+
+interface Job {
+  important: boolean;
+  jobNumber: string;
+  client: string;
+  name: string;
+  state: string;
+  startDate: Date;
+  dueDate: Date;
 }
