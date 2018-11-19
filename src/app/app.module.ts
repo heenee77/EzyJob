@@ -5,9 +5,17 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+import { BusinessPage } from '../pages/business/business';
+import { ReportPage } from '../pages/report/report';
+import { ClientPage } from '../pages/client/client';
+import { JobPage } from '../pages/job/job';
+import { JobDetailsPage } from '../pages/job-details/job-details';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { LoginPage } from '../pages/login/login';
+import { UserDropdownPage } from '../pages/user-dropdown/user-dropdown';
+
 
 import { HttpClientModule } from "@angular/common/http";
 import { DevPage } from '../pages/dev/dev';
@@ -16,8 +24,15 @@ import { RequestProvider } from '../providers/request/request';
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,
+    LoginPage,
     ListPage,
+    HomePage,
+    ClientPage,
+    JobPage,
+    BusinessPage,
+    ReportPage,
+    JobDetailsPage,
+    UserDropdownPage,
     DevPage
   ],
   imports: [
@@ -28,8 +43,15 @@ import { RequestProvider } from '../providers/request/request';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,
+    LoginPage,
     ListPage,
+    HomePage,
+    ClientPage,
+    JobPage,
+    BusinessPage,
+    ReportPage,
+    JobDetailsPage,
+    UserDropdownPage,
     DevPage
   ],
   providers: [
