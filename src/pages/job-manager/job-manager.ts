@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
+import { JobDetailsPage } from "../job-details/job-details";
 
 /**
  * Generated class for the JobManagerPage page.
@@ -13,9 +14,7 @@ import { IonicPage, NavController, NavParams } from "ionic-angular";
   selector: "page-job-manager",
   templateUrl: "job-manager.html"
 })
-
 export class JobManagerPage {
-  
   jobSummary: {
     total: number;
     startingToday: number;
@@ -35,6 +34,51 @@ export class JobManagerPage {
     jobNumber: string;
     name: string;
   }[];
+
+  jobFilter: JobFilter;
+
+  filterPressed(filter: string) {
+    switch (filter) {
+      case JobFilter.archieve: {
+        this.jobFilter = JobFilter.archieve;
+        break;
+      }
+      case JobFilter.all: {
+        this.jobFilter = JobFilter.all;
+        break;
+      }
+      case JobFilter.importantDates: {
+        this.jobFilter = JobFilter.importantDates;
+        break;
+      }
+      case JobFilter.managedBy: {
+        this.jobFilter = JobFilter.managedBy;
+        break;
+      }
+      case JobFilter.my: {
+        this.jobFilter = JobFilter.my;
+        break;
+      }
+      case JobFilter.recurring: {
+        this.jobFilter = JobFilter.recurring;
+        break;
+      }
+      case JobFilter.search: {
+        this.jobFilter = JobFilter.search;
+        break;
+      }
+      case JobFilter.staffAllocation: {
+        this.jobFilter = JobFilter.staffAllocation;
+        break;
+      }
+      default: {
+        console.log("Some stuff is selected, but no match found");
+        break;
+      }
+    }
+
+    console.log("this.jobFilter: ", this.jobFilter);
+  }
 
   sortJobList(
     inputList: Job[],
@@ -71,6 +115,11 @@ export class JobManagerPage {
     }
 
     return sortedJobList;
+  }
+
+  navigateToJobDetailsPage(jobNumber: string): void {
+    console.log("Navigating to Job Details Page with params: ", { jobNumber });
+    this.navCtrl.push(JobDetailsPage, { jobNumber });
   }
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
@@ -138,7 +187,6 @@ export class JobManagerPage {
   }
 }
 
-
 interface Job {
   important: boolean;
   jobNumber: string;
@@ -147,4 +195,15 @@ interface Job {
   state: string;
   startDate: Date;
   dueDate: Date;
+}
+
+enum JobFilter {
+  all = "all",
+  my = "my",
+  managedBy = "managedBy",
+  importantDates = "importantDates",
+  staffAllocation = "staffAllocation",
+  search = "search",
+  archieve = "archieve",
+  recurring = "recurring"
 }

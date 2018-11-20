@@ -9,13 +9,15 @@ import { ListPage } from '../pages/list/list';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { JobManagerPage } from '../pages/job-manager/job-manager';
+import { JobDetailsPage } from '../pages/job-details/job-details';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     ListPage,
-    JobManagerPage
+    JobManagerPage,
+    JobDetailsPage
   ],
   imports: [
     BrowserModule,
@@ -26,7 +28,8 @@ import { JobManagerPage } from '../pages/job-manager/job-manager';
     MyApp,
     HomePage,
     ListPage,
-    JobManagerPage
+    JobManagerPage,
+    JobDetailsPage
   ],
   providers: [
     StatusBar,
