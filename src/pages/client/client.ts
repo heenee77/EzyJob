@@ -20,8 +20,12 @@ import { HomePage } from '../home/home';
 export class ClientPage {
 
   public pageList = [HomePage, ClientPage, JobPage, BusinessPage, ReportPage];
+  tab1Selected:boolean;
+  tab2Selected:boolean;
 
   constructor(public navCtrl: NavController, public popoverCtrl: PopoverController) {
+    this.tab1Selected=true;
+    this.tab2Selected=false;
   }
 
   ionViewDidLoad() {
@@ -39,4 +43,15 @@ export class ClientPage {
     });
   }
 
+
+  tabSel(e){
+    if(e=='contacts'){
+      this.tab1Selected=false;
+      this.tab2Selected=true;
+    }
+    else if(e=='clients'){
+      this.tab1Selected=true;
+      this.tab2Selected=false;
+    }
+  }
 }
