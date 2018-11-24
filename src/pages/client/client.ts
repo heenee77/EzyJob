@@ -20,8 +20,29 @@ import { HomePage } from '../home/home';
 export class ClientPage {
 
   public pageList = [HomePage, ClientPage, JobPage, BusinessPage, ReportPage];
-  tab1Selected:boolean;
-  tab2Selected:boolean;
+  tab1Selected: boolean;
+  tab2Selected: boolean;
+  public selectAllChecked = false;
+  public rows: Array<{name: string, phone: string, address: string, checked: boolean}> = [
+    { 
+      name: "Client 1",
+      phone: "+60123456789",
+      address: "1, Friar's Lane",
+      checked: false
+    },
+    {
+      name: "Client 2",
+      phone: "+60129876543",
+      address: "2, Friar's Lane",
+      checked: false
+    },
+    {
+      name: "Client 1",
+      phone: "+60185432789",
+      address: "3, Friar's Lane",
+      checked: false
+    }
+  ];
 
   constructor(public navCtrl: NavController, public popoverCtrl: PopoverController) {
     this.tab1Selected=true;
@@ -52,6 +73,15 @@ export class ClientPage {
     else if(e=='clients'){
       this.tab1Selected=true;
       this.tab2Selected=false;
+    }
+  }
+
+  private selectAll(){
+    if (this.selectAllChecked) {
+      this.rows.map(rows => rows.checked = true);
+    } 
+    else {
+        this.rows.map(rows => rows.checked = false);
     }
   }
 }
