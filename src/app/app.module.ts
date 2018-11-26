@@ -20,6 +20,7 @@ import { UserDropdownPage } from '../pages/user-dropdown/user-dropdown';
 import { HttpClientModule } from "@angular/common/http";
 import { DevPage } from '../pages/dev/dev';
 import { RequestProvider } from '../providers/request/request';
+import { JobProvider } from '../providers/job/job';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import { RequestProvider } from '../providers/request/request';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    RequestProvider
+    RequestProvider,
+    JobProvider
   ]
 })
 export class AppModule {}
