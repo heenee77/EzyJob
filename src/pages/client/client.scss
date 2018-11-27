@@ -250,14 +250,16 @@ page-client {
         padding-bottom: 0;
         width: 100%;
       }
-      .table tbody tr td {
-        background: #fff;
+      .table tbody tr td{
         border-bottom: 1px solid #ebecef;
         font-size: 14px;
         color: #64687b;
         font-family: "Tahoma", Arial;
         padding: 10px 10px 10px 10px;
         text-align: center;
+      }
+      .table tbody tr{
+        background: #fff;
       }
       .table thead tr:first-child th {
         border-top: 1px solid red;
@@ -279,4 +281,17 @@ page-client {
       .table > thead > tr > th {
         border-bottom: 1px solid #dbdce2;
       }
+
+      .table tbody tr:hover{
+        background-color: #eee;
+      }
+
+      .table tbody tr a{
+        text-decoration: none;
+      }
+
+      .table tbody tr a:hover{
+        text-decoration: underline;
+      }
+
 }

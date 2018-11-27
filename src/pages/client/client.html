@@ -120,7 +120,7 @@
     <tbody>
       <tr *ngFor="let client of rows">
         <td><ion-checkbox [(ngModel)]="client.checked"></ion-checkbox></td>
-        <td> {{client.name}} </td>
+        <td><a href=# (click)="clientSelected(client)"> {{client.name}} </a></td>
         <td> {{client.phone}} </td>
         <td> {{client.address}} </td>
       </tr>

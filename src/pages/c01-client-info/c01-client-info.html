@@ -1,0 +1,59 @@
+<!--
+  Generated template for the C01ClientInfoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Client Info</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list style="width:85%;margin:auto">
+    <ion-item style="height:40px; font-weight: bold;"> {{clientName}} </ion-item>
+    <ion-item style="height:40px;"><span style="position:relative;top:7px;left:15px">Client</span>
+      <button ion-button class="c01-newButton"  color="light">
+        &nbsp; Options &nbsp;<ion-icon name="arrow-dropdown"></ion-icon>
+      </button>
+      <button ion-button class="c01-newButton"  color="light">
+        <ion-icon name="add"></ion-icon>&nbsp; New &nbsp;<ion-icon name="arrow-dropdown"></ion-icon>
+      </button>
+    </ion-item>
+    <br>
+  </ion-list>
+
+  <ion-card style="width:85%;margin:auto;margin-bottom:30px">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <p class="paymentTitle">Awaiting Payment (1)</p>
+          <p class="paymentAwait">5,000.00</p>
+        </ion-col>
+        <ion-col>
+            <p class="paymentTitle">Invoices Overdue (1)</p>
+            <p class="paymentOverdue">5,000.00</p>
+          </ion-col>
+          <ion-col>
+              <p class="paymentTitle">WIP (1)</p>
+              <p class="paymentAwait">650.00</p>
+            </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+
+  <ion-grid style="width:100%" no-padding>
+      <ion-row>
+      <ion-col >
+        <ul class="tabrow">
+          <li (click)="tabSel('details')" style="margin-left:7%" [ngClass]="{'selected':tab1Selected}">Details</li>
+          <li (click)="tabSel('jobs')" [ngClass]="{'selected':tab2Selected}">Jobs</li>
+        </ul>
+      </ion-col>
+      </ion-row>
+      </ion-grid>
+</ion-content>

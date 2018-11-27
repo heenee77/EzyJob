@@ -5,6 +5,7 @@ import { ReportPage } from '../report/report';
 import { BusinessPage } from '../business/business';
 import { UserDropdownPage } from '../user-dropdown/user-dropdown';
 import { HomePage } from '../home/home';
+import { C01ClientInfoPage } from '../c01-client-info/c01-client-info';
 /**
  * Generated class for the ClientPage page.
  *
@@ -20,8 +21,8 @@ import { HomePage } from '../home/home';
 export class ClientPage {
 
   public pageList = [HomePage, ClientPage, JobPage, BusinessPage, ReportPage];
-  tab1Selected: boolean;
-  tab2Selected: boolean;
+  private tab1Selected: boolean;
+  private tab2Selected: boolean;
   public selectAllChecked = false;
   public rows: Array<{name: string, phone: string, address: string, checked: boolean}> = [
     { 
@@ -57,6 +58,10 @@ export class ClientPage {
     this.navCtrl.setRoot(this.pageList[pageNum]);
   }
 
+  clientSelected(clientSelection){
+    this.navCtrl.push(C01ClientInfoPage, clientSelection);
+  }
+
   presentPopover(myEvent) {
     let popover = this.popoverCtrl.create(UserDropdownPage);
     popover.present({
@@ -76,7 +81,7 @@ export class ClientPage {
     }
   }
 
-  private selectAll(){
+  selectAll(){
     if (this.selectAllChecked) {
       this.rows.map(rows => rows.checked = true);
     } 

@@ -20,6 +20,7 @@ import { UserDropdownPage } from '../pages/user-dropdown/user-dropdown';
 import { HttpClientModule } from "@angular/common/http";
 import { DevPage } from '../pages/dev/dev';
 import { RequestProvider } from '../providers/request/request';
+import { C01ClientInfoPage } from '../pages/c01-client-info/c01-client-info';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { RequestProvider } from '../providers/request/request';
     ReportPage,
     JobDetailsPage,
     UserDropdownPage,
-    DevPage
+    DevPage,
+    C01ClientInfoPage
   ],
   imports: [
     BrowserModule,
@@ -52,7 +54,8 @@ import { RequestProvider } from '../providers/request/request';
     ReportPage,
     JobDetailsPage,
     UserDropdownPage,
-    DevPage
+    DevPage,
+    C01ClientInfoPage
   ],
   providers: [
     StatusBar,
