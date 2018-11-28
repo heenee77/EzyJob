@@ -22,7 +22,7 @@ import { DevPage } from '../pages/dev/dev';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = LoginPage;
+  rootPage: any = JobManagerPage;
 
   pages: Array<{title: string, component: any}>;
 
