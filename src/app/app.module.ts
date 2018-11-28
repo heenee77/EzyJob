@@ -21,6 +21,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { DevPage } from '../pages/dev/dev';
 import { RequestProvider } from '../providers/request/request';
 import { C01ClientInfoPage } from '../pages/c01-client-info/c01-client-info';
+import { JobManagerPage } from '../pages/job-manager/job-manager';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { C01ClientInfoPage } from '../pages/c01-client-info/c01-client-info';
     JobDetailsPage,
     UserDropdownPage,
     DevPage,
-    C01ClientInfoPage
+    C01ClientInfoPage,
+    JobManagerPage
   ],
   imports: [
     BrowserModule,
@@ -55,7 +57,8 @@ import { C01ClientInfoPage } from '../pages/c01-client-info/c01-client-info';
     JobDetailsPage,
     UserDropdownPage,
     DevPage,
-    C01ClientInfoPage
+    C01ClientInfoPage,
+    JobManagerPage
   ],
   providers: [
     StatusBar,
