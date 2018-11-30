@@ -25,8 +25,7 @@ export class DevPage {
     public requestProvider: RequestProvider
   ) {
     requestProvider.getDataList<User>("USER", "mcwei", 1).then(result => {
-      this.userList = result;
-      console.log("result: ", result);
+      
     })
   }
 

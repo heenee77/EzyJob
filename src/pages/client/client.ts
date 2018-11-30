@@ -21,10 +21,10 @@ import { C01ClientInfoPage } from '../c01-client-info/c01-client-info';
 export class ClientPage {
 
   public pageList = [HomePage, ClientPage, JobPage, BusinessPage, ReportPage];
-  private tab1Selected: boolean;
-  private tab2Selected: boolean;
+  public tab1Selected: boolean;
+  public tab2Selected: boolean;
   public selectAllChecked = false;
-  public rows: Array<{name: string, phone: string, address: string, checked: boolean}> = [
+  private rows: Array<{name: string, phone: string, address: string, checked: boolean}> = [
     { 
       name: "Client 1",
       phone: "+60123456789",

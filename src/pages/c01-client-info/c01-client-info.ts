@@ -15,8 +15,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class C01ClientInfoPage {
   clientName : string;
-  private tab1Selected: boolean;
-  private tab2Selected: boolean;
+  public tab1Selected: boolean;
+  public tab2Selected: boolean;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.clientName = this.navParams.get('name');

@@ -63,5 +63,80 @@
 
 
 <ion-content padding>
+  <ion-grid style="width:85%" no-padding>
+      <ion-row style="padding:10px"></ion-row>
+      <ion-row>
+        <div (click)="presentPopover($event)" id="client-title">All Quotes <ion-icon name="arrow-dropdown"></ion-icon></div>
+      </ion-row>
+      <ion-row><div class="hr"></div></ion-row>
+      </ion-grid>
 
+      <ion-grid style="width:85%" no-padding>
+          <ion-row>
+            <ion-col>
+              <button ion-button col-2><ion-icon name="add"></ion-icon> &nbsp; New &nbsp;<ion-icon name="arrow-dropdown"></ion-icon></button>
+            </ion-col>
+          </ion-row>
+      </ion-grid>
+      
+      <ion-grid style="width:100%" no-padding>
+      <ion-row>
+      <ion-col >
+        <ul class="tabrow">
+          <li (click)="tabSel('all')" style="margin-left:7%" [ngClass]="{'selected':tab1Selected}">
+            <p class="paymentTitle" no-margin>All (2)</p>
+            <p class="paymentAwait" no-margin>600.00</p>
+          </li>
+          <li (click)="tabSel('drafted')" [ngClass]="{'selected':tab2Selected}">
+            <p class="paymentTitle" no-margin>Drafted (0)</p>
+            <p class="paymentAwait" no-margin>0.00</p>
+          </li>
+          <li (click)="tabSel('issued')" [ngClass]="{'selected':tab3Selected}">
+            <p class="paymentTitle" no-margin>Issued (2)</p>
+            <p class="paymentAwait" no-margin>600.00</p>
+          </li>
+          <li (click)="tabSel('expired')" [ngClass]="{'selected':tab4Selected}">
+            <p class="paymentTitle" no-margin>Expired (0)</p>
+            <p class="paymentOverdue" no-margin>0.00</p>
+          </li>
+        </ul>
+      </ion-col>
+      </ion-row>
+      </ion-grid>
+              
+      
+
+  <div id="table">
+      <header>
+        <span>
+        Quotes
+        </span>
+      </header>
+      <table class="table">
+        <thead>
+          <tr>
+            <th><ion-checkbox (ionChange)="selectAll()" [(ngModel)]="selectAllChecked"></ion-checkbox></th>
+            <th>No.</th>
+            <th>Name</th>
+            <th>Client</th>
+            <th>State</th>
+            <th>Valid until</th>
+            <th>Amount</th>
+          </tr>
+        </thead>
+    
+        <tbody>
+          <tr *ngFor="let quote of rows">
+            <td><ion-checkbox [(ngModel)]="quote.checked"></ion-checkbox></td>
+            <td><a href=#> {{quote.number}} </a></td>
+            <td> {{quote.name}} </td>
+            <td> {{quote.clientName}} </td>
+            <td> {{quote.state}} </td>
+            <td> {{quote.validity}} </td>
+            <td> {{quote.amount}} </td>
+          </tr>
+        </tbody>
+        
+      </table>
+  </div>
 </ion-content>
