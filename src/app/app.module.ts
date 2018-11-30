@@ -18,6 +18,7 @@ import { UserDropdownPage } from '../pages/user-dropdown/user-dropdown';
 
 
 import { HttpClientModule } from "@angular/common/http";
+import { NgCalendarModule  } from 'ionic2-calendar';
 import { DevPage } from '../pages/dev/dev';
 import { RequestProvider } from '../providers/request/request';
 import { C01ClientInfoPage } from '../pages/c01-client-info/c01-client-info';
@@ -38,6 +39,7 @@ import { C01ClientInfoPage } from '../pages/c01-client-info/c01-client-info';
     C01ClientInfoPage
   ],
   imports: [
+    NgCalendarModule,
     BrowserModule,
     HttpClientModule,
     IonicModule.forRoot(MyApp),

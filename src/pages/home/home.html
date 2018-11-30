@@ -87,18 +87,64 @@
 
       <ion-col col-9>
           <ion-card>
-              <ion-card-header>
+              <ion-card-header class="card-title">
                 Important Dates
               </ion-card-header>
               <ion-card-content>
-                *Calendar
+                <ion-grid>
+                  <ion-row>
+                    <ion-col col-11></ion-col>
+                    <ion-col col-1><button ion-button (click)="addEvent()">Add</button></ion-col>
+                  </ion-row>
+
+                  <ion-row>
+                    <ion-col>
+                      <calendar 
+                        [eventSource]="eventSource"
+                        [calendarMode]="calendar.mode"
+                        [currentDate]="calendar.currentDate"
+                        (onEventSelected)="onEventSelected($event)"
+                        (onTitleChanged)="onViewTitleChanged($event)"
+                        (onTimeSelected)="onTimeSelected($event)"
+                        step="30"
+                        class="calendar">
+                      </calendar>
+                    </ion-col>
+
+                  </ion-row>
+                </ion-grid>
+                
               </ion-card-content>
 
-              <ion-card-header>
+              <ion-card-header class="card-title">
                   Today's Jobs
               </ion-card-header>
               <ion-card-content>
-                  *Table
+                  <div id="table">
+                      <header>
+                        <span>
+                        Client List
+                        </span>
+                      </header>
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th>Job</th>
+                            <th>Client</th>
+                            <th>State</th>
+                          </tr>
+                        </thead>
+                    
+                        <tbody>
+                          <tr *ngFor="let j of jobs">
+                            <td><a href=# (click)="clientSelected(client)">  {{ j.jobNum }} - {{j.jobDesc}} </a></td>
+                            <td> {{j.client}} </td>
+                            <td> {{j.state}} </td>
+                          </tr>
+                        </tbody>
+                        
+                      </table>
+                  </div>
               </ion-card-content>
           </ion-card>
       </ion-col>
