@@ -1,18 +1,154 @@
 <ion-header>
+  <!--Header Bar-->
   <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Home</ion-title>
+    <ion-toolbar style="height:40px">
+      <ion-grid style="height:40px; width:86%" no-padding>
+          <ion-row style="height:40px" no-padding>
+            <ion-col col-6 col-md-9>
+                <ion-toolbar>
+                    <ion-title>EzyJob</ion-title>
+                </ion-toolbar>
+            </ion-col>
+            <ion-col col-2 col-md-2 align-items-center align-self-center>
+                    <div class="companyInfo">ABC Company</div>
+            </ion-col>
+            <ion-col col-2 col-md-1>
+                    <button ion-button clear color="light" (click)="presentPopover($event)">UserName &nbsp;<ion-icon name="arrow-dropdown"></ion-icon></button>
+            </ion-col>
+            <ion-col col-2></ion-col>
+          </ion-row>
+        </ion-grid>
+    </ion-toolbar>
+    
+    <!--Navigation Bar-->
+    <ion-toolbar style="height:40px">
+      <ion-grid style="height:40px; width:85%" no-padding>
+        <ion-row style="height:40px" no-padding>
+
+          <!--<ion-col>
+            <button ion-button menuToggle>
+              <ion-icon name="menu"></ion-icon>
+            </button>
+          </ion-col>-->
+          
+            <ion-col col-sm-2>
+              <button class="navButton">Dashboard</button>
+            </ion-col>
+            <ion-col col-sm-2>
+              <button (click)="pageNav(1)" class="navButton">Clients</button>
+            </ion-col>
+            <ion-col col-sm-2>
+              <button (click)="pageNav(2)" class="navButton">Jobs</button>
+            </ion-col>
+            <ion-col col-sm-2>
+              <button (click)="pageNav(3)" class="navButton">Business</button>
+            </ion-col>
+            <ion-col col-sm-2>
+              <button (click)="pageNav(4)" class="navButton">Reports</button>
+            </ion-col>
+          
+        </ion-row>
+      </ion-grid>
+
+    </ion-toolbar>
   </ion-navbar>
+
 </ion-header>
 
 <ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+  <ion-grid style="width:90%">
+    <ion-row></ion-row>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
+    <ion-row>
+      <ion-col col-3>
+          <ion-row col-12>
+              <ion-col>
+                  <button ion-button col-12>New Job</button>
+              </ion-col>
+          </ion-row>
+    
+          <ion-row col-12>
+            <ion-col>
+                <ion-card col-12>
+                    <ion-list>
+                      <ion-list-header>
+                              My Jobs - Planned
+                      </ion-list-header>
+    
+                      <button ion-item *ngFor="let j of jobs" (click)="itemSelected(j)">
+                                {{ j.jobNum }} - {{j.jobDesc}}
+                      </button>
+          
+                    </ion-list>
+                </ion-card>
+            </ion-col>
+          </ion-row>
+      </ion-col>
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+      <ion-col col-9>
+          <ion-card>
+              <ion-card-header class="card-title">
+                Important Dates
+              </ion-card-header>
+              <ion-card-content>
+                <ion-grid>
+                  <ion-row>
+                    <ion-col col-11></ion-col>
+                    <ion-col col-1><button ion-button (click)="addEvent()">Add</button></ion-col>
+                  </ion-row>
+
+                  <ion-row>
+                    <ion-col>
+                      <calendar 
+                        [eventSource]="eventSource"
+                        [calendarMode]="calendar.mode"
+                        [currentDate]="calendar.currentDate"
+                        (onEventSelected)="onEventSelected($event)"
+                        (onTitleChanged)="onViewTitleChanged($event)"
+                        (onTimeSelected)="onTimeSelected($event)"
+                        step="30"
+                        class="calendar">
+                      </calendar>
+                    </ion-col>
+
+                  </ion-row>
+                </ion-grid>
+                
+              </ion-card-content>
+
+              <ion-card-header class="card-title">
+                  Today's Jobs
+              </ion-card-header>
+              <ion-card-content>
+                  <div id="table">
+                      <header>
+                        <span>
+                        Client List
+                        </span>
+                      </header>
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th>Job</th>
+                            <th>Client</th>
+                            <th>State</th>
+                          </tr>
+                        </thead>
+                    
+                        <tbody>
+                          <tr *ngFor="let j of jobs">
+                            <td><a href=# (click)="clientSelected(client)">  {{ j.jobNum }} - {{j.jobDesc}} </a></td>
+                            <td> {{j.client}} </td>
+                            <td> {{j.state}} </td>
+                          </tr>
+                        </tbody>
+                        
+                      </table>
+                  </div>
+              </ion-card-content>
+          </ion-card>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
 </ion-content>

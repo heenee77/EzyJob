@@ -1,0 +1,17 @@
+page-report {
+    .report-header{
+        background-color:#333333;
+        color:#ffffff;
+        font-weight:bold;
+    }
+
+    .hr {
+        border-bottom: 1px solid #ccc;
+        margin: auto;
+        width: 95%;
+    }
+
+    .report:hover{
+        background-color:#ccc;
+    }
+}
