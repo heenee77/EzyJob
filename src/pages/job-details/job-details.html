@@ -5,14 +5,138 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>jobDetails</ion-title>
-  </ion-navbar>
-
+  <ion-navbar> <ion-title>jobDetails</ion-title> </ion-navbar>
 </ion-header>
 
-
 <ion-content padding>
-  <h1>Navigated from job number: {{ param.jobNumber }}</h1>
+  <div class="information">
+    <div class="job-information">
+      <h2>Job Information</h2>
+      <ion-grid>
+        <ion-row> <ion-col> Job No.: J0000001 </ion-col> </ion-row>
+        <ion-row>
+          <ion-col> Client: Client 3 </ion-col>
+          <ion-col> Contact: Johnson </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col> Name: Standard </ion-col>
+          <ion-col> Client Order No.: ABC123 </ion-col>
+        </ion-row>
+        <ion-row> <ion-col>Description: Sample of job </ion-col></ion-row>
+        <ion-row><ion-col>Budget: RM100 </ion-col></ion-row>
+        <ion-row>
+          <ion-col> State: Planned </ion-col>
+          <ion-col> Category: Something </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+    <div class="schedule-information">
+      <h2>Schedule Information</h2>
+      <ion-grid>
+        <ion-row>
+          <ion-col> Start Date: 14 Oct 2018 </ion-col>
+          <ion-col> Due Date: 14 Oct 2018 </ion-col>
+        </ion-row>
+        <ion-row> <ion-col> Priority: Normal </ion-col> </ion-row>
+        <ion-row> <ion-col> Account Manager: Gary Yow </ion-col> </ion-row>
+        <ion-row> <ion-col> Staff: Gary Yeow </ion-col> </ion-row>
+      </ion-grid>
+    </div>
+    <div class="milestones">
+      <h2>Milestones</h2>
+      <button ion-button>+ New Milestone</button>
+      <div>
+        <calendar [currentDate]="calendarConfig.currentDate"> </calendar>
+      </div>
+    </div>
+    <div class="task">
+      <h2>Task</h2>
+      <div class="button-group">
+        <button ion-button>+ New Task</button>
+        <button ion-button>Staff Allocation</button>
+      </div>
+      <div class="view-options">
+        <a>Detail</a>
+        <a>Summary</a>
+      </div>
+      <div class="task-table">
+        <ion-grid>
+          <!-- Table Head -->
+          <ion-row class="table-head">
+            <ion-grid>
+              <ion-row>
+                <ion-col col-1> </ion-col>
+                <ion-col col-1> </ion-col>
+                <ion-col col-4> Name </ion-col>
+                <ion-col col-1> Start </ion-col>
+                <ion-col col-1> Due </ion-col>
+                <ion-col col-1> Estimated </ion-col>
+                <ion-col col-1> Actual </ion-col>
+                <ion-col col-1> Remaining </ion-col>
+                <ion-col col-1> </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-row>
+
+          <!-- Table Body -->
+          <ion-row>
+            <ion-grid>
+              <ion-row class="table-list-item">
+                <ion-grid>
+                  <ion-row>
+                    <ion-col col-1> <input type="checkbox" /> </ion-col>
+                    <ion-col col-1> i </ion-col>
+                    <ion-col col-4> Apprentice </ion-col>
+                    <ion-col col-1> 12 Dec </ion-col>
+                    <ion-col col-1> 13 Dec </ion-col>
+                    <ion-col col-1> 0.00 </ion-col>
+                    <ion-col col-1> 0.00 </ion-col>
+                    <ion-col col-1> 0.00 </ion-col>
+                    <ion-col col-1> X </ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col>
+                      <input
+                        type="text"
+                        placeholder="Add a to-do item and press enter to save"
+                      />
+                    </ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col> <a>Add a note</a> </ion-col>
+                  </ion-row>
+                </ion-grid>
+              </ion-row>
+              <ion-row class="table-list-item">
+                <ion-grid>
+                  <ion-row>
+                    <ion-col col-1> <input type="checkbox" /> </ion-col>
+                    <ion-col col-1> i </ion-col>
+                    <ion-col col-4> Builder </ion-col>
+                    <ion-col col-1> 25 Dec </ion-col>
+                    <ion-col col-1> 31 Dec </ion-col>
+                    <ion-col col-1> 0.00 </ion-col>
+                    <ion-col col-1> 0.00 </ion-col>
+                    <ion-col col-1> 0.00 </ion-col>
+                    <ion-col col-1> X </ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col>
+                      <input
+                        type="text"
+                        placeholder="Add a to-do item and press enter to save"
+                      />
+                    </ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col> <a>Add a note</a> </ion-col>
+                  </ion-row>
+                </ion-grid>
+              </ion-row>
+            </ion-grid>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </div>
+  </div>
 </ion-content>
