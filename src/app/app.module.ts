@@ -13,7 +13,6 @@ import { JobPage } from '../pages/job/job';
 import { JobDetailsPage } from '../pages/job-details/job-details';
 
 import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
 import { JobManagerPage } from '../pages/job-manager/job-manager';
 import { LoginPage } from '../pages/login/login';
 import { UserDropdownPage } from '../pages/user-dropdown/user-dropdown';
@@ -66,7 +65,6 @@ import { C01ClientInfoPage } from '../pages/c01-client-info/c01-client-info';
   ],
   providers: [
     StatusBar,
-    SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     RequestProvider
   ]
