@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { ComponentsModule } from '../components/components.module'
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -30,7 +31,6 @@ import { C01ClientInfoPage } from '../pages/c01-client-info/c01-client-info';
     LoginPage,
     ListPage,
     HomePage,
-    ListPage,
     JobManagerPage,
     ClientPage,
     JobPage,
@@ -42,6 +42,7 @@ import { C01ClientInfoPage } from '../pages/c01-client-info/c01-client-info';
     C01ClientInfoPage
   ],
   imports: [
+    ComponentsModule,
     NgCalendarModule,
     BrowserModule,
     HttpClientModule,

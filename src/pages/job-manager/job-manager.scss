@@ -1,35 +1,45 @@
 page-job-manager {
+  .jobTitle{
+    color:#aeaeae;
+    text-align: center;
+  }
+
+  .jobNumber{
+    color: #048fc2;
+    font-size: large;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  ion-card ion-col.col:nth-child(n+2){
+    border-left:solid #dedede 1px;
 }
 
-.job-list-table {
-  width: 100%;
-}
+  .card-title{
+    background-color:color($colors, primary);
+    color:#ffffff;
+    font-weight:bold;
+  }
 
-table,
-td {
-  border: 1px solid black;
-  text-align: center;
-  padding: 5px;
-}
+  ion-list-header.list-header{
+    border-bottom: 1px solid color($colors,gray1);
+    background-color:#c7c7c7;
+    color:#555555;
+    font-weight:bold;
+    margin-bottom: 0;
+  }
 
-table {
-  border-radius: 5px;
-}
+  ion-card.card-md {
+    margin-left: 0px;
+  }
 
-.job-summary-table table td {
-  padding: 10px;
-}
+  ion-list{
+    border-top: 1px solid color($colors,gray1);
+  }
 
-div {
-  margin: 5px;
-}
+  .item-block{
+    border-bottom: 1px solid color($colors,gray1);
+  }
 
-ul {
-  list-style-type: none;
-  margin: auto;
-}
 
-li {
-  float: left;
-  margin: 2px;
 }

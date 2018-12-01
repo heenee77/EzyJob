@@ -5,138 +5,159 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-  <ion-navbar> <ion-title>jobManager</ion-title> </ion-navbar>
+  <custom-navbar></custom-navbar>
 </ion-header>
 
 <ion-content padding>
-  <div class="job-summary-table">
-    <table>
-      <tr>
-        <td>
-          <h4>Total</h4>
-          <span>{{ jobSummary.total }}</span>
-        </td>
-        <td>
-          <h4>Starting Today</h4>
-          <span>{{ jobSummary.startingToday }}</span>
-        </td>
-        <td>
-          <h4>Due This Week</h4>
-          <span>{{ jobSummary.dueThisWeek }}</span>
-        </td>
-        <td>
-          <h4>Due Next Week</h4>
-          <span>{{ jobSummary.dueNextWeek }}</span>
-        </td>
-        <td>
-          <h4>Overdue</h4>
-          <span>{{ jobSummary.overdue }}</span>
-        </td>
-      </tr>
-    </table>
-  </div>
 
-  <div class="planned-job-list">
-    <table>
-      <thead>
-        <tr>
-          <td>My Jobs - Planned</td>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let job of plannedJobList">
-          <td>
-            <a (click)="navigateToJobDetailsPage(job.jobNumber)">{{ job.jobNumber }}</a> - {{ job.name }}
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+<ion-grid>
+<ion-row>
+  <ion-col col-3>
 
-  <div class="in-progress-job-list">
-    <table>
-      <thead>
-        <tr>
-          <td>My Jobs - Planned</td>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let job of inProgressJobList">
-          <td>
-            <a (click)="navigateToJobDetailsPage(job.jobNumber)">{{ job.jobNumber }}</a> - {{ job.name }}
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+    <ion-grid>
 
-  <div class="job-list-filter">
-    <ul>
-      <li><button (click)="filterPressed('all')">All</button></li>
-      <li><button (click)="filterPressed('my')">My</button></li>
-      <li><button (click)="filterPressed('managedBy')">Managed By</button></li>
-      <li>
-        <button (click)="filterPressed('importantDates')">
-          Important Dates
-        </button>
-      </li>
-      <li>
-        <button (click)="filterPressed('staffAllocation')">
-          Staff Allocation
-        </button>
-      </li>
-      <li><button (click)="filterPressed('search')">Search</button></li>
-      <li><button (click)="filterPressed('archieve')">Archieve</button></li>
-      <li><button (click)="filterPressed('recurring')">Recurring</button></li>
-      <!--
-        <li>Managed By</li>
-        <li>Important Dates</li>
-        <li>Staff Allocation</li>
-        <li>Search</li>
-        <li>Archieve</li>
-        <li>Recurring</li>
-      -->
-    </ul>
-  </div>
+      <ion-row>
+        <ion-card>
+          <ion-list>
+            <ion-list-header>
+              My Jobs - Planned
+            </ion-list-header>
+    
+            <button ion-item *ngFor="let job of plannedJobList" (click)="navigateToJobDetailsPage(job.jobNumber)">
+              <a href="#">{{ job.jobNumber }}</a> - {{ job.name }}
+            </button>
+    
+          </ion-list>
+        </ion-card>
+      </ion-row>
 
-  <div class="job-list-table">
-    <table style="width: 100%;">
-      <thead>
-        <tr>
-          <td>!</td>
-          <td>Job No.</td>
-          <td>Client</td>
-          <td>Name</td>
-          <td>State</td>
-          <td>Start</td>
-          <td>Due</td>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let job of jobList">
-          <td>
-            <span *ngIf="job.important"><b>!</b></span>
-          </td>
-          <td>
-            <a (click)="navigateToJobDetailsPage(job.jobNumber)">{{ job.jobNumber }}</a>
-          </td>
-          <td>{{ job.client }}</td>
-          <td>{{ job.name }}</td>
-          <td>
-            <ion-item>
-              <!-- <ion-label>Job State</ion-label> -->
-              <ion-select [(ngModel)]="job.state">
-                <ion-option value="planned">Planned</ion-option>
-                <ion-option value="inProgress">In Progress</ion-option>
-                <ion-option value="resolved">Resolved</ion-option>
-              </ion-select>
-            </ion-item>
-          </td>
-          <td>{{ job.startDate.toLocaleDateString() }}</td>
-          <td>{{ job.dueDate.toLocaleDateString() }}</td>
-        </tr>
-      </tbody>
-    </table>
-    <h3>{{ jobFilter }}</h3>
-  </div>
+      <ion-row>
+        <ion-card>
+          <ion-list>
+
+            <ion-list-header>
+              My Jobs - Planned
+            </ion-list-header>
+    
+            <button ion-item *ngFor="let job of inProgressJobList" (click)="navigateToJobDetailsPage(job.jobNumber)">
+              <a href="#">{{ job.jobNumber }}</a> - {{ job.name }}
+            </button>
+    
+          </ion-list>
+        </ion-card>
+      </ion-row>
+
+    </ion-grid>
+
+  </ion-col>
+
+  <ion-col col-9>
+    <ion-grid>
+      <ion-row>
+        <ion-card style="width:100%;margin:auto;margin-bottom:30px">
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                <p class="jobTitle">Total</p>
+                <p class="jobNumber">{{ jobSummary.total }}</p>
+              </ion-col>
+              <ion-col>
+                <p class="jobTitle">Starting Today</p>
+                <p class="jobNumber">{{ jobSummary.startingToday }}</p>
+              </ion-col>
+              <ion-col>
+                <p class="jobTitle">Due This Week</p>
+                <p class="jobNumber">{{ jobSummary.dueThisWeek }}</p>
+              </ion-col>
+              <ion-col>
+                <p class="jobTitle">Due Next Week</p>
+                <p class="jobNumber">{{ jobSummary.dueNextWeek }}</p>
+              </ion-col>
+              <ion-col>
+                <p class="jobTitle">Overdue</p>
+                <p class="jobNumber">{{ jobSummary.overdue }}</p>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card>
+      </ion-row>
+
+      <ion-row>
+        <div id="table" style="width:100%">
+          <header>
+            <span style="padding:auto"> 
+              <button ion-button color="light" small (click)="filterPressed('all')" no-padding no-margin>
+                All
+              </button>
+              <button ion-button color="light" small (click)="filterPressed('my')" no-padding no-margin>
+                My
+              </button>
+              <button ion-button color="light" small (click)="filterPressed('managedBy')" no-padding no-margin>
+                Managed By
+              </button>
+              <button ion-button color="light" small (click)="filterPressed('importantDates')" no-padding no-margin>
+                Important Dates
+              </button>
+              <button ion-button color="light" small (click)="filterPressed('staffAllocation')" no-padding no-margin>
+                Staff Allocation
+              </button>
+              <button ion-button color="light" small (click)="filterPressed('search')" no-padding no-margin>
+                Search
+              </button>
+              <button ion-button color="light" small (click)="filterPressed('archieve')" no-padding no-margin>
+                Archieve
+              </button>
+              <button ion-button color="light" small (click)="filterPressed('recurring')" no-padding no margin>
+                Recurring
+              </button>
+            </span>
+          </header>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>!</th>
+                <th>Job No.</th>
+                <th>Client</th>
+                <th>Name</th>
+                <th>State</th>
+                <th>Start</th>
+                <th>Due</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let job of jobList">
+                <td>
+                  <span *ngIf="job.important"><b>!</b></span>
+                </td>
+                <td>
+                  <a href="#" (click)="navigateToJobDetailsPage(job.jobNumber)">{{ job.jobNumber }}</a>
+                </td>
+                <td>{{ job.client }}</td>
+                <td>{{ job.name }}</td>
+                <td>
+                  <ion-item>
+                    <!-- <ion-label>Job State</ion-label> -->
+                    <ion-select [(ngModel)]="job.state">
+                      <ion-option value="planned">Planned</ion-option>
+                      <ion-option value="inProgress">In Progress</ion-option>
+                      <ion-option value="resolved">Resolved</ion-option>
+                    </ion-select>
+                  </ion-item>
+                </td>
+                <td>{{ job.startDate.toLocaleDateString() }}</td>
+                <td>{{ job.dueDate.toLocaleDateString() }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </ion-row>
+    </ion-grid>
+  </ion-col>
+</ion-row>
+  
+<ion-row>
+  <h3>{{ jobFilter }}</h3>
+</ion-row>
+  
+</ion-grid>
 </ion-content>

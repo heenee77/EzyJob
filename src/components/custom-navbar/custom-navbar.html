@@ -1,0 +1,54 @@
+<!-- Generated template for the CustomNavbarComponent component -->
+  <!--Header Bar-->
+  <ion-navbar no-padding>
+      <ion-toolbar style="height:40px">
+        <ion-grid style="height:40px; width:86%" no-padding>
+            <ion-row style="height:40px" no-padding>
+              <ion-col col-6 col-md-9>
+                  <ion-toolbar>
+                      <ion-title>EzyJob</ion-title>
+                  </ion-toolbar>
+              </ion-col>
+              <ion-col col-2 col-md-2 align-items-center align-self-center>
+                      <div class="companyInfo">ABC Company</div>
+              </ion-col>
+              <ion-col col-2 col-md-1>
+                      <button ion-button clear color="light" (click)="presentPopover($event)">UserName &nbsp;<ion-icon name="arrow-dropdown"></ion-icon></button>
+              </ion-col>
+              <ion-col col-2></ion-col>
+            </ion-row>
+          </ion-grid>
+      </ion-toolbar>
+      
+      <!--Navigation Bar-->
+      <ion-toolbar style="height:40px">
+        <ion-grid style="height:40px; width:85%" no-padding>
+          <ion-row style="height:40px" no-padding>
+  
+            <!--<ion-col>
+              <button ion-button menuToggle>
+                <ion-icon name="menu"></ion-icon>
+              </button>
+            </ion-col>-->
+            
+              <ion-col col-sm-2>
+                <button (click)="pageNav(0)" class="navButton">Dashboard</button>
+              </ion-col>
+              <ion-col col-sm-2>
+                <button (click)="pageNav(1)" class="navButton">Clients</button>
+              </ion-col>
+              <ion-col col-sm-2>
+                <button (click)="pageNav(2)" class="navButton">Jobs</button>
+              </ion-col>
+              <ion-col col-sm-2>
+                <button (click)="pageNav(3)" class="navButton">Business</button>
+              </ion-col>
+              <ion-col col-sm-2>
+                <button (click)="pageNav(4)" class="navButton">Reports</button>
+              </ion-col>
+            
+          </ion-row>
+        </ion-grid>
+  
+      </ion-toolbar>
+    </ion-navbar>

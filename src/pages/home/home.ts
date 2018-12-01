@@ -1,10 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, IonicPage, PopoverController, ModalController, AlertController } from 'ionic-angular';
 import { JobDetailsPage } from '../job-details/job-details';
-import { ClientPage } from '../client/client';
-import { JobPage } from '../job/job';
-import { BusinessPage } from '../business/business';
-import { ReportPage } from '../report/report';
 import { UserDropdownPage } from '../user-dropdown/user-dropdown';
 import * as moment from 'moment';
 
@@ -16,7 +12,6 @@ import * as moment from 'moment';
 export class HomePage {
 
   jobs: Array<{jobNum: string, jobDesc: string, client: string, state: string}>;
-  public pageList = [HomePage, ClientPage, JobPage, BusinessPage, ReportPage];
 
   //<Calendar>
   eventSource = [];
@@ -40,10 +35,6 @@ export class HomePage {
   
   itemSelected(jobSelection){
     this.navCtrl.push(JobDetailsPage, jobSelection);
-  }
-
-  pageNav(pageNum:number){
-    this.navCtrl.setRoot(this.pageList[pageNum]);
   }
 
   presentPopover(myEvent) {
