@@ -44,11 +44,8 @@ import { JobManagerPage } from '../pages/job-manager/job-manager';
   ],
   imports: [
     BrowserModule,
-<<<<<<< HEAD
     HttpClientModule,
-=======
     NgCalendarModule,
->>>>>>> f6a060cc0e5bff8b5059a7176b8ecb7b40185533
     IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
