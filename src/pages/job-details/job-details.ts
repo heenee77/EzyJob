@@ -19,8 +19,13 @@ export class JobDetailsPage {
     jobNumber: string
   };
 
+  calendarConfig: any;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.param = navParams.data;
+    this.calendarConfig = {
+      currentDate: new Date(Date.now()),
+    }
   }
 
   ionViewDidLoad() {
