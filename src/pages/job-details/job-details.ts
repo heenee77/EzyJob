@@ -14,10 +14,18 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'job-details.html',
 })
 export class JobDetailsPage {
-  selection:string;
+
+  param: {
+    jobNumber: string
+  };
+
+  calendarConfig: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.selection = this.navParams.get('jobDesc');
+    this.param = navParams.data;
+    this.calendarConfig = {
+      currentDate: new Date(Date.now()),
+    }
   }
 
   ionViewDidLoad() {

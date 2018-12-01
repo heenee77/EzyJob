@@ -11,6 +11,8 @@ import { ClientPage } from '../pages/client/client';
 import { JobPage } from '../pages/job/job';
 import { JobDetailsPage } from '../pages/job-details/job-details';
 
+import { NgCalendarModule } from "ionic2-calendar";
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { LoginPage } from '../pages/login/login';
@@ -22,6 +24,8 @@ import { NgCalendarModule  } from 'ionic2-calendar';
 import { DevPage } from '../pages/dev/dev';
 import { RequestProvider } from '../providers/request/request';
 import { C01ClientInfoPage } from '../pages/c01-client-info/c01-client-info';
+import { JobManagerPage } from '../pages/job-manager/job-manager';
+
 
 @NgModule({
   declarations: [
@@ -36,12 +40,14 @@ import { C01ClientInfoPage } from '../pages/c01-client-info/c01-client-info';
     JobDetailsPage,
     UserDropdownPage,
     DevPage,
-    C01ClientInfoPage
+    C01ClientInfoPage,
+    JobManagerPage
   ],
   imports: [
     NgCalendarModule,
     BrowserModule,
     HttpClientModule,
+    NgCalendarModule,
     IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
@@ -57,7 +63,8 @@ import { C01ClientInfoPage } from '../pages/c01-client-info/c01-client-info';
     JobDetailsPage,
     UserDropdownPage,
     DevPage,
-    C01ClientInfoPage
+    C01ClientInfoPage,
+    JobManagerPage
   ],
   providers: [
     StatusBar,
