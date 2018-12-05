@@ -21,6 +21,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { DevPage } from '../pages/dev/dev';
 import { RequestProvider } from '../providers/request/request';
 import { JobProvider } from '../providers/job/job';
+import { UserProvider } from '../providers/user/user';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,8 @@ import { JobProvider } from '../providers/job/job';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     RequestProvider,
-    JobProvider
+    JobProvider,
+    UserProvider
   ]
 })
 export class AppModule {}
