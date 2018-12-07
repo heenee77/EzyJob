@@ -119,7 +119,7 @@ export class JobManagerPage {
 
   navigateToJobDetailsPage(jobNumber: string): void {
     console.log("Navigating to Job Details Page with params: ", { jobNumber });
-    this.navCtrl.push(JobDetailsPage, { jobNumber });
+    this.navCtrl.setRoot(JobDetailsPage, { jobNumber } );
   }
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {

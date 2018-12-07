@@ -5,12 +5,13 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-  <ion-navbar> <ion-title>Job Details</ion-title> </ion-navbar>
+  <custom-navbar></custom-navbar>
 </ion-header>
 
 <ion-content padding>
-  <div class="information">
+  <div class="information" style="width:90%;margin:auto">
     <div class="job-information">
+      <a href=# (click)="navigateToJobManagerPage()">Job Manager</a>
       <h2>Job Information</h2>
       <ion-grid>
         <ion-row> <ion-col> Job No.: J0000001 </ion-col> </ion-row>
@@ -59,9 +60,56 @@
         <a>Detail</a>
         <a>Summary</a>
       </div>
+
+      <div id="table">
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th></th>
+              <th></th>
+              <th>Name</th>
+              <th>Start</th>
+              <th>Due</th>
+              <th>Estimated</th>
+              <th>Actual</th>
+              <th>Remaining</th>
+              <th>Notes</th>
+              <th></th>
+            </tr>
+          </thead>
+      
+          <tbody>
+            <tr *ngFor="let task of tasks">
+              <td><ion-checkbox></ion-checkbox></td>
+              <td><ion-icon name="create"></ion-icon></td>
+              <td><a href=#> {{task.name}} <ion-icon name="information-circle"></ion-icon> </a></td>
+              <td> {{task.startDate}} </td>
+              <td> {{task.dueDate}} </td>
+              <td> {{task.estimate}} </td>
+              <td> {{task.actual}} </td>
+              <td> {{task.remaining}} </td>
+              <td>
+                <input
+                type="text"
+                placeholder="Add a to-do item and press enter to save"
+                />
+                <p><a href=#>Add a note</a></p>
+              </td>
+              <td>
+                  <button ion-button icon-only>
+                    <ion-icon name="close" small></ion-icon>
+                  </button>
+                </td>
+            </tr>
+          </tbody>
+          
+        </table>
+      </div>
+      <!--
       <div class="task-table">
         <ion-grid>
-          <!-- Table Head -->
+          
           <ion-row class="table-head">
             <ion-grid>
               <ion-row>
@@ -78,7 +126,7 @@
             </ion-grid>
           </ion-row>
 
-          <!-- Table Body -->
+          
           <ion-row>
             <ion-grid>
               <ion-row class="table-list-item">
@@ -136,7 +184,7 @@
             </ion-grid>
           </ion-row>
         </ion-grid>
-      </div>
+      </div> -->
     </div>
   </div>
 

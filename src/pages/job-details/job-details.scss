@@ -1,6 +1,21 @@
 page-job-details {
 
+    // .information{
+    //     width:90%;
+    // }
+
 }
+
+#table {
+    border: 1px solid #dbdce2;
+    border-bottom: 1px solid #ccc;
+    box-shadow: 0 1px 2px #d1d1d1;
+    border-radius: 3px;
+    width: 100%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
 
 .task-table .table-head .col {
     border: 1px solid black;

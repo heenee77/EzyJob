@@ -34,7 +34,7 @@ export class HomePage {
   }
   
   itemSelected(jobSelection){
-    this.navCtrl.push(JobDetailsPage, jobSelection);
+    this.navCtrl.setRoot(JobDetailsPage, jobSelection);
   }
 
   presentPopover(myEvent) {
