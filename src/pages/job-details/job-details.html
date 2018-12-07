@@ -11,8 +11,10 @@
 <ion-content padding>
   <div class="information" style="width:90%;margin:auto">
     <div class="job-information">
-      <a href=# (click)="navigateToJobManagerPage()">Job Manager</a>
-      <h2>Job Information</h2>
+      <p><a href=# (click)="navigateToJobManagerPage()">Job Manager</a></p>
+      <div>
+      <h2 style="display:inline-block">Job Information</h2> <button ion-button float-right>Edit Job</button>
+      </div>
       <ion-grid>
         <ion-row> <ion-col> Job No.: J0000001 </ion-col> </ion-row>
         <ion-row>
@@ -31,6 +33,7 @@
         </ion-row>
       </ion-grid>
     </div>
+    <br/><br/>
     <div class="schedule-information">
       <h2>Schedule Information</h2>
       <ion-grid>
@@ -43,6 +46,7 @@
         <ion-row> <ion-col> Staff: Gary Yeow </ion-col> </ion-row>
       </ion-grid>
     </div>
+    <br/><br/>
     <div class="milestones">
       <h2>Milestones</h2>
       <button ion-button>+ New Milestone</button>
@@ -50,6 +54,7 @@
         <calendar [currentDate]="calendarConfig.currentDate"> </calendar>
       </div>
     </div>
+    <br/><br/>
     <div class="task">
       <h2>Task</h2>
       <div class="button-group">
