@@ -18,9 +18,49 @@
         </ion-card-header>
         <ion-card-content>
           <br>
+
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                <ion-card>
+                  <ion-card-header class="chart-header">
+                    Bar Chart
+                  </ion-card-header>
+                  <ion-card-content>
+                    <canvas #barCanvas></canvas>
+                  </ion-card-content>
+                </ion-card>
+              </ion-col>
+
+              <ion-col>
+                <ion-card>
+                  <ion-card-header class="chart-header">
+                    Doughnut Chart
+                  </ion-card-header>
+                  <ion-card-content>
+                    <canvas #doughnutCanvas></canvas>
+                  </ion-card-content>
+                </ion-card>
+              </ion-col>
+
+              <ion-col>
+                <ion-card>
+                  <ion-card-header class="chart-header">
+                    Line Chart
+                  </ion-card-header>
+                  <ion-card-content>
+                    <canvas #lineCanvas></canvas>
+                  </ion-card-content>
+                </ion-card>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+          
           <p>Number of Active Jobs: 3</p>
           <p>Number of Jobs Overdue: 0</p>
-          <p>Jobs that require attention: <br><a href="#">See more</a></p>
+          <p>Jobs that require attention: 0 </p>
+          <p><a href="#">See more</a></p>
+          
         </ion-card-content>
       </ion-card>
     </ion-row>

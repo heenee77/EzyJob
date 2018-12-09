@@ -14,4 +14,12 @@ page-report {
     .report:hover{
         background-color:#ccc;
     }
+
+    .chart-header{
+        font-weight:bold;
+    }
+    
+    .scroll-content {
+        background-color: map-get($colors, light);
+    }
 }
