@@ -23,6 +23,7 @@ import { NgCalendarModule  } from 'ionic2-calendar';
 import { DevPage } from '../pages/dev/dev';
 import { RequestProvider } from '../providers/request/request';
 import { C01ClientInfoPage } from '../pages/c01-client-info/c01-client-info';
+import { C02ClientNewFormPage } from '../pages/c02-client-new-form/c02-client-new-form';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { C01ClientInfoPage } from '../pages/c01-client-info/c01-client-info';
     JobDetailsPage,
     UserDropdownPage,
     DevPage,
-    C01ClientInfoPage
+    C01ClientInfoPage,
+    C02ClientNewFormPage
   ],
   imports: [
     ComponentsModule,
@@ -61,7 +63,8 @@ import { C01ClientInfoPage } from '../pages/c01-client-info/c01-client-info';
     JobDetailsPage,
     UserDropdownPage,
     DevPage,
-    C01ClientInfoPage
+    C01ClientInfoPage,
+    C02ClientNewFormPage
   ],
   providers: [
     StatusBar,

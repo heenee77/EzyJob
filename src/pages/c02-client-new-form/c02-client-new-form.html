@@ -1,0 +1,80 @@
+<!--
+  Generated template for the C02ClientNewFormPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <custom-navbar></custom-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div class="form-container">
+    <form [formGroup]="todo" (ngSubmit)="logForm()">
+      <ion-list>
+        <ion-list-header class="form-title">General</ion-list-header>
+        <ion-item>
+          <ion-label stacked>Client Name</ion-label>
+          <ion-input type="text" placeholder="Enter Client Name" formControlName="clientName"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label stacked>Account Manager</ion-label>
+          <ion-select placeholder="Select..." multiple="false" interface="popover" formControlName="accountManager" class="client-form-dropdown">
+            <ion-option *ngFor="let manager of staff" value="{{manager}}">{{manager}}</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label stacked>Job Manager</ion-label>
+          <ion-select placeholder="Select..." multiple="false" interface="popover" formControlName="jobManager" class="client-form-dropdown">
+            <ion-option *ngFor="let manager of staff" value="{{manager}}">{{manager}}</ion-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+      
+      <ion-list>
+        <ion-list-header class="form-title">Contact Details</ion-list-header>
+        <ion-item>
+          <ion-label stacked>Phone</ion-label>
+          <ion-input type="text" formControlName="phone"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label stacked>Fax</ion-label>
+          <ion-input type="text" formControlName="fax"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label stacked>Email Address</ion-label>
+          <ion-input type="text" formControlName="email"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label stacked>Website</ion-label>
+          <ion-input type="text" formControlName="web"></ion-input>
+        </ion-item>
+        
+        <ion-item>
+          <ion-label stacked>Address</ion-label>
+          <ion-textarea formControlName="streetAddress" placeholder=" Street Addresss"></ion-textarea>
+        </ion-item>
+        <ion-item>
+          <ion-input type="text" formControlName="townCity" placeholder="Town / City"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="text" formControlName="stateRegion" placeholder="State / Region"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="text" formControlName="zipcode" placeholder="Postal / Zip Code"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="text" formControlName="country" placeholder="Country"></ion-input>
+        </ion-item>
+        <ion-item></ion-item>
+        
+      </ion-list>
+      
+      <button ion-button type="submit" [disabled]="!todo.valid">Submit</button>
+      <button ion-button (click)="navToClientPage()">Cancel</button>
+    </form>
+  </div>
+</ion-content>

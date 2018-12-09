@@ -6,6 +6,7 @@ import { BusinessPage } from '../business/business';
 import { UserDropdownPage } from '../user-dropdown/user-dropdown';
 import { HomePage } from '../home/home';
 import { C01ClientInfoPage } from '../c01-client-info/c01-client-info';
+import { C02ClientNewFormPage } from '../c02-client-new-form/c02-client-new-form';
 /**
  * Generated class for the ClientPage page.
  *
@@ -54,8 +55,8 @@ export class ClientPage {
     console.log('ionViewDidLoad ClientPage');
   }
 
-  pageNav(pageNum:number){
-    this.navCtrl.setRoot(this.pageList[pageNum]);
+  navToNewClientForm(){
+    this.navCtrl.setRoot(C02ClientNewFormPage);
   }
 
   clientSelected(clientSelection){
