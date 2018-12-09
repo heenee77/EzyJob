@@ -70,7 +70,14 @@
           <ion-input type="text" formControlName="country" placeholder="Country"></ion-input>
         </ion-item>
         <ion-item></ion-item>
-        
+      </ion-list>
+
+      <ion-list>
+        <ion-list-header class="form-title">Billing</ion-list-header>
+        <ion-item>
+          <ion-label >Zero Rated VAT</ion-label>
+          <ion-checkbox formControlName="zeroRatedTax"></ion-checkbox>
+        </ion-item>
       </ion-list>
       
       <button ion-button type="submit" [disabled]="!todo.valid">Submit</button>

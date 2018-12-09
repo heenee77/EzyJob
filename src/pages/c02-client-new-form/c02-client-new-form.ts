@@ -38,7 +38,8 @@ export class C02ClientNewFormPage {
       townCity: ['', Validators.required],
       stateRegion: ['', Validators.required],
       zipcode: ['', Validators.required],
-      country: ['', Validators.required]
+      country: ['', Validators.required],
+      zeroRatedTax: [false]
     });
   }
 
