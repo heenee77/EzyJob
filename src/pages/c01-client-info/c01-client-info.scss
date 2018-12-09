@@ -1,12 +1,33 @@
 page-c01-client-info {
+    .paymentStatusBar{
+        .col:nth-child(n+2){
+            border-left:solid #dedede 1px;
+        }
+    }
     .c01-newButton{
         float: right;
         margin: 5px;
         color: #048fc2;
     }
-    
-    .col:nth-child(n+2){
-        border-left:solid #dedede 1px;
+
+
+    .client-details-header{
+        font-weight: bold;
+        font-size: large;
+        border-bottom:solid #dedede 1px;
+    }
+
+    .client-details{
+        .list-item-header{
+            color:#999;
+            display: inline-block;
+            width: 30%;
+        }
+
+        .list-item{
+            display: inline-block;
+            font-size: small;
+        }
     }
 
     .paymentTitle{

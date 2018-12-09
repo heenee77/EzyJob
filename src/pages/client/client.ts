@@ -60,7 +60,7 @@ export class ClientPage {
   }
 
   clientSelected(clientSelection){
-    this.navCtrl.push(C01ClientInfoPage, clientSelection);
+    this.navCtrl.setRoot(C01ClientInfoPage, clientSelection);
   }
 
   presentPopover(myEvent) {

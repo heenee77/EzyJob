@@ -6,9 +6,7 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>Client Info</ion-title>
-  </ion-navbar>
+  <custom-navbar></custom-navbar>
 
 </ion-header>
 
@@ -27,7 +25,7 @@
     <br>
   </ion-list>
 
-  <ion-card style="width:85%;margin:auto;margin-bottom:30px">
+  <ion-card class="paymentStatusBar" style="width:85%;margin:auto;margin-bottom:30px">
     <ion-grid>
       <ion-row>
         <ion-col>
@@ -47,13 +45,73 @@
   </ion-card>
 
   <ion-grid style="width:100%" no-padding>
-      <ion-row>
-      <ion-col >
-        <ul class="tabrow">
-          <li (click)="tabSel('details')" style="margin-left:7%" [ngClass]="{'selected':tab1Selected}">Details</li>
-          <li (click)="tabSel('jobs')" [ngClass]="{'selected':tab2Selected}">Jobs</li>
-        </ul>
+    <ion-row>
+    <ion-col >
+      <ul class="tabrow">
+        <li (click)="tabSel('details')" style="margin-left:7%" [ngClass]="{'selected':tab1Selected}">Details</li>
+        <li (click)="tabSel('jobs')" [ngClass]="{'selected':tab2Selected}">Jobs</li>
+      </ul>
+    </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid style="width:85%">
+    <ion-row>
+      <ion-col col-8>
+
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              Account Manager:   Gary Yow
+            </ion-col>
+            <ion-col>
+              Job Manager:   Moi
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-card>
+              <ion-list>
+                <ion-list-header class="client-details-header">Billing</ion-list-header>
+                <ion-item>
+                  Zero Rated Tax
+                  <span style="margin-left: 50px; font-size: small; color:#999">No</span>
+                </ion-item>
+              </ion-list>
+              
+            </ion-card>
+          </ion-row>
+        </ion-grid>
+
       </ion-col>
-      </ion-row>
-      </ion-grid>
+      <ion-col col-4>
+
+        <ion-list class="client-details">
+          <ion-list-header class="client-details-header">Contact Details</ion-list-header>
+          <ion-item>
+            <span class="list-item-header">Phone</span>
+            <span class="list-item">0123456789</span>
+          </ion-item>
+          <ion-item>
+            <span class="list-item-header">Fax</span>
+            <span class="list-item">03-771234567</span>
+          </ion-item>
+          <ion-item>
+            <span class="list-item-header">Email</span>
+            <span class="list-item">bryanlink@hotmail.com</span>
+          </ion-item>
+          <ion-item>
+            <span class="list-item-header">Website</span>
+            <span class="list-item"><a href=#>www.testpage.com</a></span>
+          </ion-item>
+          <ion-item>
+            <span class="list-item-header">Address</span>
+            <span class="list-item">0123456789</span>
+          </ion-item>
+        </ion-list>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
 </ion-content>
