@@ -21,7 +21,7 @@ import { DevPage } from '../pages/dev/dev';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = LoginPage;
+  rootPage: any = DevPage;
 
   pages: Array<{title: string, component: any}>;
 

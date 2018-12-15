@@ -6,6 +6,8 @@ import { BusinessPage } from '../business/business';
 import { UserDropdownPage } from '../user-dropdown/user-dropdown';
 import { HomePage } from '../home/home';
 import { C01ClientInfoPage } from '../c01-client-info/c01-client-info';
+import { RequestProvider } from "../../providers/request/request";
+import { Client } from "../../models/client";
 /**
  * Generated class for the ClientPage page.
  *
@@ -24,30 +26,36 @@ export class ClientPage {
   private tab1Selected: boolean;
   private tab2Selected: boolean;
   public selectAllChecked = false;
-  public rows: Array<{name: string, phone: string, address: string, checked: boolean}> = [
-    { 
-      name: "Client 1",
-      phone: "+60123456789",
-      address: "1, Friar's Lane",
-      checked: false
-    },
-    {
-      name: "Client 2",
-      phone: "+60129876543",
-      address: "2, Friar's Lane",
-      checked: false
-    },
-    {
-      name: "Client 1",
-      phone: "+60185432789",
-      address: "3, Friar's Lane",
-      checked: false
-    }
-  ];
+  public rows: Array<{name: string, phone: string, address: string, checked: boolean}> 
+  
+  
+  // [
+  //   { 
+  //     name: "Client 1",
+  //     phone: "+60123456789",
+  //     address: "1, Friar's Lane",
+  //     checked: false
+  //   },
+  //   {
+  //     name: "Client 2",
+  //     phone: "+60129876543",
+  //     address: "2, Friar's Lane",
+  //     checked: false
+  //   },
+  //   {
+  //     name: "Client 1",
+  //     phone: "+60185432789",
+  //     address: "3, Friar's Lane",
+  //     checked: false
+  //   }
+  // ];
 
-  constructor(public navCtrl: NavController, public popoverCtrl: PopoverController) {
+  constructor(public navCtrl: NavController, public popoverCtrl: PopoverController, public request:RequestProvider) {
     this.tab1Selected=true;
     this.tab2Selected=false;
+    /*request.getDataList<Client>().then(result => {
+
+    })*/
   }
 
   ionViewDidLoad() {

@@ -17,6 +17,12 @@ import { User } from "../../models/user";
 })
 export class DevPage {
 
+
+
+
+
+
+
   userList: User[] = [];
 
   constructor(
@@ -24,11 +30,16 @@ export class DevPage {
     public navParams: NavParams,
     public requestProvider: RequestProvider
   ) {
-    requestProvider.getDataList<User>("USER", "mcwei", 1).then(result => {
-      // this.userList = result;
+    requestProvider.getData<User>("USER", "Id" , "1").then((result) => {
+      this.userList= result.Records;
       console.log("result: ", result);
     })
   }
+
+
+
+
+  
 
   ionViewDidLoad() {
     console.log("ionViewDidLoad DevPage");
