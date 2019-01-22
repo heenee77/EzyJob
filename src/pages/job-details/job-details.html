@@ -10,107 +10,117 @@
 
 <ion-content padding>
   <div class="information" style="width:90%;margin:auto">
-    <div class="job-information">
       <p><a href=# (click)="navigateToJobManagerPage()">Job Manager</a></p>
-      <div>
-      <h2 style="display:inline-block">Job Information</h2> <button ion-button float-right>Edit Job</button>
-      </div>
-      <ion-grid>
-        <ion-row> <ion-col> Job No.: J0000001 </ion-col> </ion-row>
-        <ion-row>
-          <ion-col> Client: Client 3 </ion-col>
-          <ion-col> Contact: Johnson </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col> Name: Standard </ion-col>
-          <ion-col> Client Order No.: ABC123 </ion-col>
-        </ion-row>
-        <ion-row> <ion-col>Description: Sample of job </ion-col></ion-row>
-        <ion-row><ion-col>Budget: RM100 </ion-col></ion-row>
-        <ion-row>
-          <ion-col> State: Planned </ion-col>
-          <ion-col> Category: Something </ion-col>
-        </ion-row>
-      </ion-grid>
-    </div>
-    <br/><br/>
-    <div class="schedule-information">
-      <h2>Schedule Information</h2>
-      <ion-grid>
-        <ion-row>
-          <ion-col> Start Date: 14 Oct 2018 </ion-col>
-          <ion-col> Due Date: 14 Oct 2018 </ion-col>
-        </ion-row>
-        <ion-row> <ion-col> Priority: Normal </ion-col> </ion-row>
-        <ion-row> <ion-col> Account Manager: Gary Yow </ion-col> </ion-row>
-        <ion-row> <ion-col> Staff: Gary Yeow </ion-col> </ion-row>
-      </ion-grid>
-    </div>
-    <br/><br/>
-    <div class="milestones">
-      <h2>Milestones</h2>
-      <button ion-button>+ New Milestone</button>
-      <div>
-        <calendar [currentDate]="calendarConfig.currentDate"> </calendar>
-      </div>
-    </div>
-    <br/><br/>
-    <div class="task">
-      <h2>Task</h2>
-      <div class="button-group">
-        <button ion-button>+ New Task</button>
-        <button ion-button>Staff Allocation</button>
-      </div>
-      <div class="view-options">
-        <a>Detail</a>
-        <a>Summary</a>
-      </div>
+      <ul class="tabrow">
+        <li (click)="tabSel('information')" style="margin-left:1%" [ngClass]="{'selected':tab1Selected}">Information</li>
+        <li (click)="tabSel('timesheet')" [ngClass]="{'selected':tab2Selected}">Time Sheet</li>
+        <li (click)="tabSel('notes')" [ngClass]="{'selected':tab3Selected}">Notes</li>
+        <li (click)="tabSel('documents')" [ngClass]="{'selected':tab4Selected}">Documents</li>
+        <li (click)="tabSel('costs')" [ngClass]="{'selected':tab5Selected}">Costs</li>
+        <li (click)="tabSel('financial')" [ngClass]="{'selected':tab6Selected}">Financial</li>
+      </ul>
 
-      <div id="table">
+    <div class="job-details-container">
+    <div class="job-information">
+        <div>
+        <h2 style="display:inline-block">Job Information</h2> <button ion-button float-right>Edit Job</button>
+        </div>
+        <ion-grid>
+          <ion-row> <ion-col> Job No.: J0000001 </ion-col> </ion-row>
+          <ion-row>
+            <ion-col> Client: Client 3 </ion-col>
+            <ion-col> Contact: Johnson </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col> Name: Standard </ion-col>
+            <ion-col> Client Order No.: ABC123 </ion-col>
+          </ion-row>
+          <ion-row> <ion-col>Description: Sample of job </ion-col></ion-row>
+          <ion-row><ion-col>Budget: RM100 </ion-col></ion-row>
+          <ion-row>
+            <ion-col> State: Planned </ion-col>
+            <ion-col> Category: Something </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+      <br/><br/>
+      <div class="schedule-information">
+        <h2>Schedule Information</h2>
+        <ion-grid>
+          <ion-row>
+            <ion-col> Start Date: 14 Oct 2018 </ion-col>
+            <ion-col> Due Date: 14 Oct 2018 </ion-col>
+          </ion-row>
+          <ion-row> <ion-col> Priority: Normal </ion-col> </ion-row>
+          <ion-row> <ion-col> Account Manager: Gary Yow </ion-col> </ion-row>
+          <ion-row> <ion-col> Staff: Gary Yeow </ion-col> </ion-row>
+        </ion-grid>
+      </div>
+      <br/><br/>
+      <div class="milestones">
+        <h2>Milestones</h2>
+        <button ion-button>+ New Milestone</button>
+        <div>
+          <calendar [currentDate]="calendarConfig.currentDate"> </calendar>
+        </div>
+      </div>
+      <br/><br/>
+      <div class="task">
+        <h2>Task</h2>
+        <div class="button-group">
+          <button ion-button>+ New Task</button>
+          <button ion-button>Staff Allocation</button>
+        </div>
+        <div class="view-options">
+          <a>Detail</a>
+          <a>Summary</a>
+        </div>
 
-        <table class="table">
-          <thead>
-            <tr>
-              <th></th>
-              <th></th>
-              <th>Name</th>
-              <th>Start</th>
-              <th>Due</th>
-              <th>Estimated</th>
-              <th>Actual</th>
-              <th>Remaining</th>
-              <th>Notes</th>
-              <th></th>
-            </tr>
-          </thead>
-      
-          <tbody>
-            <tr *ngFor="let task of tasks">
-              <td><ion-checkbox></ion-checkbox></td>
-              <td><ion-icon name="create"></ion-icon></td>
-              <td><a href=#> {{task.name}} <ion-icon name="information-circle"></ion-icon> </a></td>
-              <td> {{task.startDate}} </td>
-              <td> {{task.dueDate}} </td>
-              <td> {{task.estimate}} </td>
-              <td> {{task.actual}} </td>
-              <td> {{task.remaining}} </td>
-              <td>
-                <input
-                type="text"
-                placeholder="Add a to-do item and press enter to save"
-                />
-                <p><a href=#>Add a note</a></p>
-              </td>
-              <td>
-                  <button ion-button icon-only>
-                    <ion-icon name="close" small></ion-icon>
-                  </button>
+        <div id="table">
+
+          <table class="table">
+            <thead>
+              <tr>
+                <th></th>
+                <th></th>
+                <th>Name</th>
+                <th>Start</th>
+                <th>Due</th>
+                <th>Estimated</th>
+                <th>Actual</th>
+                <th>Remaining</th>
+                <th>Notes</th>
+                <th></th>
+              </tr>
+            </thead>
+        
+            <tbody>
+              <tr *ngFor="let task of tasks">
+                <td><ion-checkbox></ion-checkbox></td>
+                <td><ion-icon name="create"></ion-icon></td>
+                <td><a href=#> {{task.name}} <ion-icon name="information-circle"></ion-icon> </a></td>
+                <td> {{task.startDate}} </td>
+                <td> {{task.dueDate}} </td>
+                <td> {{task.estimate}} </td>
+                <td> {{task.actual}} </td>
+                <td> {{task.remaining}} </td>
+                <td>
+                  <input
+                  type="text"
+                  placeholder="Add a to-do item and press enter to save"
+                  />
+                  <p><a href=#>Add a note</a></p>
                 </td>
-            </tr>
-          </tbody>
-          
-        </table>
-      </div>
+                <td>
+                    <button ion-button icon-only>
+                      <ion-icon name="close" small></ion-icon>
+                    </button>
+                  </td>
+              </tr>
+            </tbody>
+            
+          </table>
+        </div>
       <!--
       <div class="task-table">
         <ion-grid>
@@ -190,6 +200,7 @@
           </ion-row>
         </ion-grid>
       </div> -->
+    </div>
     </div>
   </div>
 

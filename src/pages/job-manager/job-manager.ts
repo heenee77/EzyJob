@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
 import { JobDetailsPage } from "../job-details/job-details";
+import { J01JobNewPage } from "../j01-job-new/j01-job-new";
 
 /**
  * Generated class for the JobManagerPage page.
@@ -184,6 +185,10 @@ export class JobManagerPage {
 
   ionViewDidLoad() {
     console.log("ionViewDidLoad JobManagerPage");
+  }
+
+  NewJobButton() {
+    this.navCtrl.setRoot(J01JobNewPage);
   }
 }
 

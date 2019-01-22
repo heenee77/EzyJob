@@ -21,7 +21,7 @@
       <ion-grid style="width:85%" no-padding>
           <ion-row>
             <ion-col>
-              <button ion-button col-2><ion-icon name="add"></ion-icon> &nbsp; New &nbsp;<ion-icon name="arrow-dropdown"></ion-icon></button>
+              <button ion-button col-2 (click)="NewQuoteButton($event)"><ion-icon name="add"></ion-icon> &nbsp; New &nbsp;<ion-icon name="arrow-dropdown"></ion-icon></button>
             </ion-col>
           </ion-row>
       </ion-grid>
@@ -75,7 +75,7 @@
         <tbody>
           <tr *ngFor="let quote of rows">
             <td><ion-checkbox [(ngModel)]="quote.checked"></ion-checkbox></td>
-            <td><a href=#> {{quote.number}} </a></td>
+            <td><a href=# (click)="quoteSelected()"> {{quote.number}} </a></td>
             <td> {{quote.name}} </td>
             <td> {{quote.clientName}} </td>
             <td> {{quote.state}} </td>
