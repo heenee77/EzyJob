@@ -2,6 +2,7 @@ import { Component } from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
 import { RequestProvider } from "../../providers/request/request";
 import { User } from "../../models/user";
+import { Observable } from 'rxjs/Observable';
 
 /**
  * Generated class for the DevPage page.
