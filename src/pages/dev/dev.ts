@@ -2,6 +2,7 @@ import { Component } from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
 import { RequestProvider } from "../../providers/request/request";
 import { User } from "../../models/user";
+import { Observable } from 'rxjs/Observable';
 
 /**
  * Generated class for the DevPage page.
@@ -17,6 +18,12 @@ import { User } from "../../models/user";
 })
 export class DevPage {
 
+
+
+
+
+
+
   userList: User[] = [];
 
   constructor(
@@ -24,10 +31,16 @@ export class DevPage {
     public navParams: NavParams,
     public requestProvider: RequestProvider
   ) {
-    requestProvider.getDataList<User>("USER", "mcwei", 1).then(result => {
-     
+    requestProvider.getData<User>("USER", "Id" , "1").then((result) => {
+      this.userList= result.Records;
+      console.log("result: ", result);
     })
   }
+
+
+
+
+  
 
   ionViewDidLoad() {
     console.log("ionViewDidLoad DevPage");
