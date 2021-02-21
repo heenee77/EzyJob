@@ -1,0 +1,208 @@
+<!--
+  Generated template for the B03QuoteInfoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <custom-navbar></custom-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content padding>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-3>
+          <ion-grid>
+            <ion-row col-12>
+  
+              <ion-col>
+                <button ion-button col-12 (click)="editQuote()">Edit Quote</button>
+              </ion-col>
+            </ion-row>
+  
+            <ion-row col-12>
+  
+              <ion-col>
+                <button ion-button col-12 (click)="printQuote()">Print Quote</button>
+              </ion-col>
+            </ion-row>
+  
+            <ion-row col-12>
+  
+              <ion-col>
+                <button ion-button col-12 (click)="option()">Option &nbsp;<ion-icon name="arrow-dropdown"></ion-icon></button>
+              </ion-col>
+            </ion-row>
+  
+            <ion-row>
+              <ion-card>
+                <ion-list>
+                  <ion-list-header>
+                    My Jobs - Planned
+                  </ion-list-header>
+  
+                  <button ion-item *ngFor="let job of plannedJobList" (click)="navigateToJobDetailsPage(job.jobNumber)">
+                    <a href="#">{{ job.jobNumber }}</a> - {{ job.name }}
+                  </button>
+  
+                </ion-list>
+              </ion-card>
+            </ion-row>
+            <ion-row>
+              <ion-card>
+                <ion-list>
+                  <ion-list-header>
+                    My Jobs - Planned
+                  </ion-list-header>
+  
+                  <button ion-item *ngFor="let job of inProgressJobList" (click)="navigateToJobDetailsPage(job.jobNumber)">
+                    <a href="#">{{ job.jobNumber }}</a> - {{ job.name }}
+                  </button>
+  
+                </ion-list>
+              </ion-card>
+            </ion-row>
+          </ion-grid>
+        </ion-col>
+  
+        <ion-col>
+          <ion-grid style="width:100%" no-padding>
+          <ion-row>
+            <ion-col>
+              <ul class="tabrow">
+                <li (click)="tabSel('information')" style="margin-left:1%" [ngClass]="{'selected':tab1Selected}">Information</li>
+                <li (click)="tabSel('notes')" [ngClass]="{'selected':tab2Selected}">Notes</li>
+                <li (click)="tabSel('documents')" [ngClass]="{'selected':tab3Selected}">Documents</li>
+                <li (click)="tabSel('history')" [ngClass]="{'selected':tab4Selected}">History</li>
+              </ul>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+          <ion-grid>
+            <ion-row>
+              <h1>Quote Information</h1>
+            </ion-row>
+            <ion-row>
+              <table class="table">
+                <tr>
+                  <td>Date:</td>
+                  <td>14-Oct-2018</td>
+                  <td>Valid to:</td>
+                  <td>11-Nov-2018</td>
+                </tr>
+                <tr>
+                  <td>Client:</td>
+                  <td>Client 2</td>
+                  <td>Contact:</td>
+                  <td>Johnson</td>
+                </tr>
+                <tr>
+                  <td>Name:</td>
+                  <td>
+                    standard
+                  </td>
+                  <td></td>
+                  <td>
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Description:</td>
+                  <td>
+                    Sample of quotation
+                  </td>
+                </tr>
+                <tr>
+                  <td>Budget:</td>
+                  <td>
+                    5000.00
+                  </td>
+                </tr>
+                <tr>
+                  <td>Pricing Mode</td>
+                  <td>
+                    <select>
+                      <option value="mode">Calculated Price</option>
+                      <option value="mode">In Progress</option>
+                      <option value="mode">On Hold</option>
+                      <option value="mode">Cancelled</option>
+                    </select>
+                  </td>
+                  <td></td>
+                  <td>
+                    
+                  </td>
+                </tr>
+              </table>
+            </ion-row>
+  
+            <ion-row>
+              <h1>Tasks</h1>
+            </ion-row>
+            <div class="button-group">
+              <button ion-button>+ New Task</button>
+              <button ion-button>Staff Allocation</button>
+            </div>
+            <div class="view-options">
+              <a>Detail</a>
+              <a>Summary</a>
+            </div>
+  
+            <div id="table">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th></th>
+                    <th>Name</th>
+                    <th>Start</th>
+                    <th>Due</th>
+                    <th>Estimated</th>
+                    <th>Actual</th>
+                    <th>Remaining</th>
+                    <th>Notes</th>
+                    <th></th>
+                  </tr>
+                </thead>
+  
+                <tbody>
+                  <tr *ngFor="let task of tasks">
+                    <td><ion-checkbox></ion-checkbox></td>
+                    <td><ion-icon name="create"></ion-icon></td>
+                    <td><a href=#> {{task.name}} <ion-icon name="information-circle"></ion-icon> </a></td>
+                    <td> {{task.startDate}} </td>
+                    <td> {{task.dueDate}} </td>
+                    <td> {{task.estimate}} </td>
+                    <td> {{task.actual}} </td>
+                    <td> {{task.remaining}} </td>
+                    <td>
+                      <input type="text"
+                             placeholder="Add a to-do item and press enter to save" />
+                      <p><a href=#>Add a note</a></p>
+                    </td>
+                    <td>
+                      <button ion-button icon-only>
+                        <ion-icon name="close" small></ion-icon>
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+  
+              </table>
+            </div>
+            <ion-row>
+              <h1>Costs</h1>
+            </ion-row>
+            <ion-row>
+              <h1>Options</h1>
+            </ion-row>
+  
+          </ion-grid>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>
+  

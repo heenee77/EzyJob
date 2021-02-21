@@ -1,0 +1,43 @@
+page-j01-job-new {
+    .jobTitle {
+        color: #aeaeae;
+        text-align: center;
+      }
+    
+      .jobNumber {
+        color: #048fc2;
+        font-size: large;
+        font-weight: bold;
+        text-align: center;
+      }
+    
+      ion-card ion-col.col:nth-child(n+2) {
+        border-left: solid #dedede 1px;
+      }
+    
+      .card-title {
+        background-color: color($colors, primary);
+        color: #ffffff;
+        font-weight: bold;
+      }
+    
+      ion-list-header.list-header {
+        border-bottom: 1px solid color($colors,gray1);
+        background-color: #c7c7c7;
+        color: #555555;
+        font-weight: bold;
+        margin-bottom: 0;
+      }
+    
+      ion-card.card-md {
+        margin-left: 0px;
+      }
+    
+      ion-list {
+        border-top: 1px solid color($colors,gray1);
+      }
+    
+      .item-block {
+        border-bottom: 1px solid color($colors,gray1);
+      }
+}

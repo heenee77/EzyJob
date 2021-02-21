@@ -1,33 +1,9 @@
-page-job-details {
-
-    // .information{
-    //     width:90%;
-    // }
-
-    #table {
-        border: 1px solid #dbdce2;
-        border-bottom: 1px solid #ccc;
-        box-shadow: 0 1px 2px #d1d1d1;
-        border-radius: 3px;
-        width: 100%;
-        margin: auto;
-        margin-top: 20px;
-        margin-bottom: 20px;
-      }
-
-    .job-details-container{
-        border: 1px solid #AAA;
-        border-width:0 1px 1px;
-        padding: 20px 10px 20px;
-        box-shadow: 0 1px 2px #d1d1d1;
-        border-radius: 3px;
-    }
-
+page-b03-quote-info {
     //Tabs
   .tabrow {
     text-align: left;
     list-style: none;
-    margin: 5px 0 0px;
+    margin: 5px 0 20px;
     padding: 0;
     line-height: 24px;
     height: 35px;
@@ -72,9 +48,9 @@ page-job-details {
   .tabrow:before {
     position: absolute;
     content: " ";
-    width: 99.7%;
+    width: 100%;
     bottom: 0;
-    left: 2px;
+    left: 0;
     border-bottom: 1px solid #AAA;
     z-index: 1;
   }
@@ -110,15 +86,4 @@ page-job-details {
   .tabrow li.selected:after {
     box-shadow: -2px 2px 0 #FFF;
   }
-
-}
-
-
-
-.task-table .table-head .col {
-    border: 1px solid black;
-}
-
-.table-list-item {
-    border: 1px solid black;
 }

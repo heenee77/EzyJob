@@ -3,8 +3,10 @@ import { NavController, IonicPage, PopoverController } from 'ionic-angular';
 import { ClientPage } from '../client/client';
 import { JobPage } from '../job/job';
 import { ReportPage } from '../report/report';
-import { UserDropdownPage } from '../user-dropdown/user-dropdown';
 import { HomePage } from '../home/home';
+import { B01QuoteDropdownPage } from '../b01-quote-dropdown/b01-quote-dropdown';
+import { B02NewDropdownPage } from '../b02-new-dropdown/b02-new-dropdown';
+import { B03QuoteInfoPage } from '../b03-quote-info/b03-quote-info';
 /**
  * Generated class for the BusinessPage page.
  *
@@ -61,10 +63,21 @@ export class BusinessPage {
   }
 
   presentPopover(myEvent) {
-    let popover = this.popoverCtrl.create(UserDropdownPage);
+    let popover = this.popoverCtrl.create(B01QuoteDropdownPage);
     popover.present({
       ev: myEvent
     });
+  }
+
+  NewQuoteButton(selection) {
+    let popover = this.popoverCtrl.create(B02NewDropdownPage);
+    popover.present({
+      ev: selection
+    });
+  }
+  
+  quoteSelected(quoteSelection){
+    this.navCtrl.setRoot(B03QuoteInfoPage,quoteSelection);
   }
 
   tabSel(e){

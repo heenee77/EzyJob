@@ -3,6 +3,7 @@ import { NavController, IonicPage, PopoverController, ModalController, AlertCont
 import { JobDetailsPage } from '../job-details/job-details';
 import { UserDropdownPage } from '../user-dropdown/user-dropdown';
 import * as moment from 'moment';
+import { J01JobNewPage } from '../j01-job-new/j01-job-new';
 
 @IonicPage()
 @Component({
@@ -33,6 +34,10 @@ export class HomePage {
 
   }
   
+  NewJobButton() {
+    this.navCtrl.setRoot(J01JobNewPage);
+  }
+
   itemSelected(jobSelection){
     this.navCtrl.setRoot(JobDetailsPage, jobSelection);
   }

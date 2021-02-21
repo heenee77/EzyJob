@@ -1,0 +1,163 @@
+<!--
+  Generated template for the B05QuoteNewPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <custom-navbar></custom-navbar>
+
+</ion-header>
+  
+  
+  <ion-content padding>
+  
+  <ion-grid>
+      <ion-row>
+        <ion-col col-3>
+          <ion-grid>
+            <ion-row>
+              <ion-card>
+                <ion-list>
+                  <ion-list-header>
+                    My Jobs - Planned
+                  </ion-list-header>
+  
+                  <button ion-item *ngFor="let job of plannedJobList" (click)="navigateToJobDetailsPage(job.jobNumber)">
+                    <a href="#">{{ job.jobNumber }}</a> - {{ job.name }}
+                  </button>
+  
+                </ion-list>
+              </ion-card>
+            </ion-row>
+            <ion-row>
+              <ion-card>
+                <ion-list>
+                  <ion-list-header>
+                    My Jobs - Planned
+                  </ion-list-header>
+  
+                  <button ion-item *ngFor="let job of inProgressJobList" (click)="navigateToJobDetailsPage(job.jobNumber)">
+                    <a href="#">{{ job.jobNumber }}</a> - {{ job.name }}
+                  </button>
+  
+                </ion-list>
+              </ion-card>
+            </ion-row>
+          </ion-grid>
+        </ion-col>
+  
+        <ion-col>
+          <ion-grid>
+            <ion-row>
+              <h1>New Quote</h1>
+            </ion-row>
+            <ion-row>
+              <p>Quote Information</p>
+            </ion-row>
+            <ion-row>
+              <table class="table">
+                <tr>
+                  <td></td>
+                  <td>Add Client (+)</td>
+                  <td></td>
+                  <td>Add Contact (+)</td>
+           
+                </tr>
+                <tr>
+                  <td>Client:</td>
+                  <td>
+                    <select>
+                      <option value="mode">Client 2</option>
+                    </select>
+                  </td>
+                  <td>Contact:</td>
+                  <td>
+                    <select>
+                      <option value="mode">Johson</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Template:</td>
+                  <td>
+                    <select>
+                      <option value="mode">None</option>
+                    </select>
+                  </td>
+                  <td></td>
+                  <td></td>
+                </tr>
+  
+                <tr>
+                  <td>Name:</td>
+                  <td>
+                    <input type="text">
+                  </td>
+                  <td></td>
+                  <td></td>
+                </tr>
+  
+                <tr>
+                  <td>Description:</td>
+                  <td>
+                    <input type="text">
+                  </td>
+                  <td></td>
+                  <td></td>
+                </tr>
+  
+                <tr>
+                  <td>Budget:</td>
+                  <td>
+                    <input type="text">
+                  </td>
+                  <td></td>
+                  <td></td>
+                </tr>
+  
+                <tr>
+                  <td>Date:</td>
+                  <td>
+                    <input type="date">
+                  </td>
+                  <td>Valid to:</td>
+                  <td>
+                    <input type="date">
+                  </td>
+                </tr>          
+              </table>
+            </ion-row>
+  
+            <ion-row>
+              <p>Quote Information</p>
+            </ion-row>
+            <ion-row>
+              <table class="table">
+                <tr>
+                  <td>Explanation:</td>
+                  <td>
+                    <input type="text">
+                  </td>
+                  <td></td>
+                  <td></td>
+                </tr>
+  
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td>
+                  <button type="button">Next</button>
+                  </td>
+                  <td>
+                  <button type="button">Cancel</button>
+                  </td>
+                </tr>
+              </table>
+            </ion-row>
+          </ion-grid>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>

@@ -1,4 +1,4 @@
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { IRequestProvider } from "./IRequestProvider";
 import { Config } from "../../config";
@@ -108,6 +108,7 @@ export class RequestProvider implements IRequestProvider {
 
     return await subscribe.toPromise();
   }
+
 
   constructor(public http: HttpClient) {
     console.log("Hello RequestProvider Provider");
